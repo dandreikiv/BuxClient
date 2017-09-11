@@ -10,4 +10,13 @@
 
 @implementation NetworkManager
 
+- (void)retrieveProductsWithCompletion:(void (^)(NSData *, NSError *))completion {
+	
+}
+
+- (void)retrieveDetailsWithProduct:(Product *)product
+						completion:(void (^)(NSData *, NSError *))completion {
+	
+}
+
 @end
