@@ -14,6 +14,9 @@
 		85A4BFFE1F66F70300065E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFD1F66F70300065E36 /* Assets.xcassets */; };
 		85A4C0011F66F70300065E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFF1F66F70300065E36 /* LaunchScreen.storyboard */; };
 		85A4C00C1F66F70300065E36 /* BuxClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4C00B1F66F70300065E36 /* BuxClientTests.m */; };
+		85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC351F66F78700395B6D /* NetworkManager.m */; };
+		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
+		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		85A4C0071F66F70300065E36 /* BuxClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuxClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4C00B1F66F70300065E36 /* BuxClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuxClientTests.m; sourceTree = "<group>"; };
 		85A4C00D1F66F70300065E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85CDDC341F66F78700395B6D /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		85CDDC351F66F78700395B6D /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		85CDDC371F66F80900395B6D /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		85CDDC3B1F66F93100395B6D /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		85CDDC3C1F66F93100395B6D /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,8 @@
 		85A4BFF01F66F70300065E36 /* BuxClient */ = {
 			isa = PBXGroup;
 			children = (
+				85CDDC3E1F66F95F00395B6D /* Models */,
+				85CDDC3F1F66F97500395B6D /* Network Manager */,
 				85A4BFF41F66F70300065E36 /* AppDelegate.h */,
 				85A4BFF51F66F70300065E36 /* AppDelegate.m */,
 				85A4BFF71F66F70300065E36 /* ViewController.h */,
@@ -109,6 +119,25 @@
 				85A4C00D1F66F70300065E36 /* Info.plist */,
 			);
 			path = BuxClientTests;
+			sourceTree = "<group>";
+		};
+		85CDDC3E1F66F95F00395B6D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				85CDDC3B1F66F93100395B6D /* Product.h */,
+				85CDDC3C1F66F93100395B6D /* Product.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		85CDDC3F1F66F97500395B6D /* Network Manager */ = {
+			isa = PBXGroup;
+			children = (
+				85CDDC341F66F78700395B6D /* NetworkManager.h */,
+				85CDDC351F66F78700395B6D /* NetworkManager.m */,
+				85CDDC371F66F80900395B6D /* Configuration.plist */,
+			);
+			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +184,7 @@
 		85A4BFE61F66F70300065E36 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Dmytro Andreikiv";
 				TargetAttributes = {
 					85A4BFED1F66F70300065E36 = {
@@ -196,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A4C0011F66F70300065E36 /* LaunchScreen.storyboard in Resources */,
+				85CDDC381F66F80900395B6D /* Configuration.plist in Resources */,
 				85A4BFFE1F66F70300065E36 /* Assets.xcassets in Resources */,
 				85A4BFFC1F66F70300065E36 /* Main.storyboard in Resources */,
 			);
@@ -215,6 +245,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
+				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ViewController.m in Sources */,
 				85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */,
 				85A4BFF31F66F70300065E36 /* main.m in Sources */,
@@ -269,7 +301,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -277,11 +311,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -317,7 +354,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -325,11 +364,14 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -354,6 +396,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7N34RARQJ8;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytroandreikiv.BuxClient;
@@ -366,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7N34RARQJ8;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytroandreikiv.BuxClient;
@@ -418,6 +462,7 @@
 				85A4C0121F66F70300065E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85A4C0131F66F70300065E36 /* Build configuration list for PBXNativeTarget "BuxClientTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +471,7 @@
 				85A4C0151F66F70300065E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
