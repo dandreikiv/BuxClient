@@ -90,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8544C7F31F6A8C1A00930435 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */,
+				85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
 		85A4BFE51F66F70300065E36 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +169,7 @@
 		85CDDC3F1F66F97500395B6D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8544C7F31F6A8C1A00930435 /* WebSocket */,
 				85CDDC341F66F78700395B6D /* NetworkManager.h */,
 				85CDDC351F66F78700395B6D /* NetworkManager.m */,
 				85CDDC371F66F80900395B6D /* Configuration.plist */,
@@ -168,8 +178,6 @@
 				85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */,
 				85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */,
 				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
-				85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */,
-				85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
