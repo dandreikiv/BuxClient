@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RequestBuilderProtocol.h"
 
 @class ConnectionConfiguration;
 
-@interface RequestBuilder : NSObject
+@interface RequestBuilder : NSObject <RequestBuilderProtocol>
 
 - (instancetype)initWithConfigurataion:(ConnectionConfiguration *)conf;
 

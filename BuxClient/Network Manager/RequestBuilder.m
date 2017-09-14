@@ -9,6 +9,8 @@
 #import "RequestBuilder.h"
 #import "ConnectionConfiguration.h"
 
+static NSString *const kProductsPath = @"core/16/products/";
+
 @interface RequestBuilder()
 
 @property (nonatomic, strong) ConnectionConfiguration *configuration;
@@ -23,6 +25,20 @@
 		self.configuration = conf;
 	}
 	return self;
+}
+
+- (NSURLRequest *)productsRequest {
+	NSURL *url = [NSURL URLWithString:kProductsPath relativeToURL:self.configuration.baseURL];
+	return [self requestWithURL:url];
+}
+
+- (NSURLRequest *)requestWithURL:(NSURL *)url {
+	NSParameterAssert(url);
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+	[request setValue:self.configuration.authorizationToken forHTTPHeaderField:@"Authorization"];
+	[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+	[request setValue:@"nl-NL,en;q=0.8" forHTTPHeaderField:@"Accept-Language"];
+	return [request copy];
 }
 
 @end

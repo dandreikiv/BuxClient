@@ -57,6 +57,7 @@
 		85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionConfiguration.m; sourceTree = "<group>"; };
 		85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
 		85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
+		85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilderProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +150,7 @@
 				85CDDC371F66F80900395B6D /* Configuration.plist */,
 				85EA731B1F6A6A4900069B41 /* ConnectionConfiguration.h */,
 				85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */,
+				85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */,
 				85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */,
 				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
 			);
