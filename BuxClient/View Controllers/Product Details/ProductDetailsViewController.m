@@ -7,8 +7,11 @@
 //
 
 #import "ProductDetailsViewController.h"
+#import "Product.h"
+#import "DataCoordinator.h"
+#import "DataCoordinatorOutput.h"
 
-@interface ProductDetailsViewController ()
+@interface ProductDetailsViewController () <DataCoordinatorProductDetailsOutput>
 
 @end
 
@@ -16,7 +19,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	[self setupUI];
+}
+
+- (void)setupUI {
+	self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	self.dataCoordinator.productDetailsOutput = self;
+	[self.dataCoordinator subscribeToProduct:self.product];
+	NSLog(@"subscribeTo:%@", self.product);
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	self.dataCoordinator.productDetailsOutput = nil;
+	[self.dataCoordinator unsubscribeFromProduct:self.product];
+	NSLog(@"unsubscribeFrom:%@", self.product);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +45,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - DataCoordinatorProductDetailsOutput -
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)updateWithProduct:(Product *)product {
+	
 }
-*/
 
 @end

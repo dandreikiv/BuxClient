@@ -8,8 +8,14 @@
 
 @class Product;
 
-@protocol DataCoordinatorOutput <NSObject>
+@protocol DataCoordinatorProductListOutput <NSObject>
 
 - (void)updateListWithProducts:(NSArray <Product *> *)products;
+
+@end
+
+@protocol DataCoordinatorProductDetailsOutput <NSObject>
+
+- (void)updateWithProduct:(Product *)product;
 
 @end

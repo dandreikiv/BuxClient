@@ -10,12 +10,14 @@
 
 @class Product;
 
-@protocol DataCoordinatorOutput;
+@protocol DataCoordinatorProductListOutput;
+@protocol DataCoordinatorProductDetailsOutput;
 @protocol RequestBuilderProtocol;
 
 @interface DataCoordinator : NSObject
 
-@property (nonatomic, weak) id <DataCoordinatorOutput> coordinatorOutput;
+@property (nonatomic, weak) id <DataCoordinatorProductListOutput> productListOutput;
+@property (nonatomic, weak) id <DataCoordinatorProductDetailsOutput> productDetailsOutput;
 
 - (instancetype)initWithRequsetBuilder:(id <RequestBuilderProtocol>)requestBuilder;
 
@@ -23,6 +25,6 @@
 - (void)retrieveDetailsWithProduct:(Product *)product;
 
 - (void)subscribeToProduct:(Product *)product;
-- (void)subscribeUnsubscribeFrom:(Product *)product;
+- (void)unsubscribeFromProduct:(Product *)product;
 
 @end

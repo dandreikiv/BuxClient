@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Product;
+@class DataCoordinator;
+
 @interface ProductDetailsViewController : UIViewController
+
+@property (nonatomic, strong) DataCoordinator *dataCoordinator;
+@property (nonatomic, strong) Product *product;
 
 @end

@@ -11,7 +11,6 @@
 
 static NSString *const kSymbol = @"symbol";
 static NSString *const kDisplayName = @"displayName";
-static NSString *const kDescription = @"description";
 static NSString *const kCurrentPrice = @"currentPrice";
 static NSString *const kClosingPrice = @"closingPrice";
 static NSString *const kProductId = @"securityId";
@@ -40,7 +39,6 @@ static NSString *const kQuoteCurrency = @"quoteCurrency";
 		self.displayName = dictionary[kDisplayName];
 		self.productId = dictionary[kProductId];
 		self.category = dictionary[kCategory];
-		self.productDescription = dictionary[kDescription];
 		
 		self.currentPrice = [[Price alloc] initWithPriceDictionary:dictionary[kCurrentPrice]];
 		self.closingPrice = [[Price alloc] initWithPriceDictionary:dictionary[kClosingPrice]];

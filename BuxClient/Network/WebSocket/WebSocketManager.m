@@ -13,6 +13,7 @@
 #import "WebSocketQuoteMessage.h"
 #import "RequestBuilderProtocol.h"
 #import "SRWebSocket.h"
+#import "Product.h"
 
 @interface WebSocketManager() <SRWebSocketDelegate>
 
@@ -36,6 +37,7 @@
 #pragma mark - SRWebSocketDelegate -
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
+	NSLog(@"message:%@", message);
 	NSDictionary *messageDictionary = [self messageDictionaryFromString:message];
 	WebSocketMessage *parsedMessage = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
 	
@@ -62,6 +64,34 @@
 		default:
 			break;
 	}
+}
+
+- (void)subscribeToProuduct:(Product *)product {
+	[self.socket send:[self subscribeDataWithProduct:product]];
+}
+
+- (void)unsubscribeFromProduct:(Product *)product {
+	[self.socket send:[self unsubscribeDataWithProduct:product]];
+}
+
+- (NSData *)subscribeDataWithProduct:(Product *)product {
+	NSDictionary *json = @{@"subscribeTo" : @[ [self tradingProductStringWithProduct:product] ]};
+	NSData *messageData = [NSJSONSerialization dataWithJSONObject:json
+														  options:NSJSONWritingPrettyPrinted
+															error:NULL];
+	return messageData;
+}
+
+- (NSData *)unsubscribeDataWithProduct:(Product *)product {
+	NSDictionary *json = @{@"unsubscribeFrom" : @[ [self tradingProductStringWithProduct:product] ]};
+	NSData *messageData = [NSJSONSerialization dataWithJSONObject:json
+														  options:NSJSONWritingPrettyPrinted
+															error:NULL];
+	return messageData;
+}
+
+- (NSString *)tradingProductStringWithProduct:(Product *)product {
+	return [NSString stringWithFormat:@"trading.product.%@", product.productId];
 }
 
 - (void)dealloc {

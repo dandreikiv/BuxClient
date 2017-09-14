@@ -10,7 +10,7 @@
 #import "DataCoordinator.h"
 #import "RequestBuilder.h"
 #import "ConnectionConfiguration.h"
-#import "ProductsListViewController.h"
+#import "ProductListViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,9 +27,9 @@
 	RequestBuilder *requestBuilder = [[RequestBuilder alloc] initWithConfigurataion:configuration];
 	DataCoordinator *dataCoordinataor = [[DataCoordinator alloc] initWithRequsetBuilder:requestBuilder];
 	
-	ProductsListViewController *productsListViewController = [ProductsListViewController new];
+	ProductListViewController *productsListViewController = [ProductListViewController new];
 	productsListViewController.dataCoordinator = dataCoordinataor;
-	dataCoordinataor.coordinatorOutput = productsListViewController; // weak property.
+	dataCoordinataor.productListOutput = productsListViewController; // weak property.
 	
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:productsListViewController];
 	[self.window makeKeyAndVisible];

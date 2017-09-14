@@ -50,8 +50,36 @@
 	}];
 }
 
+- (void)retrieveDetailsWithProduct:(Product *)product {
+	NSURLRequest *request = [self.requestBuilder productDetailsRequestWithProduct:product];
+	[self.networkManager performRequest:request completion:^(NSData *data, NSError *error) {
+		if (error) {
+			[self presentRetriveProductsError:error];
+		}
+		else {
+			NSDictionary *productDictionary = [NSJSONSerialization JSONObjectWithData:data
+																			  options:NSJSONReadingMutableContainers
+																				error:NULL];
+			Product *details = [[Product alloc] initWithDictionary:productDictionary];
+			if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self.productDetailsOutput updateWithProduct:details];
+				});
+			}
+		}
+	}];
+}
+
+- (void)subscribeToProduct:(Product *)product {
+	[self.webSocketManager subscribeToProuduct:product];
+}
+
+- (void)unsubscribeFromProduct:(Product *)product {
+	[self.webSocketManager unsubscribeFromProduct:product];
+}
+
 - (void)presentRetriveProductsError:(NSError *)error {
-	
+
 }
 
 - (void)storeReceivedProductsAndUpdateList:(NSData *)data {
@@ -63,9 +91,9 @@
 		[self.products addObject:product];
 	}
 	
-	if ([self.coordinatorOutput respondsToSelector:@selector(updateListWithProducts:)]) {
+	if ([self.productListOutput respondsToSelector:@selector(updateListWithProducts:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.coordinatorOutput updateListWithProducts:self.products];
+			[self.productListOutput updateListWithProducts:self.products];
 		});
 	}
 }

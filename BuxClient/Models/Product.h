@@ -16,7 +16,6 @@
 @property (nonatomic, copy, readonly, nullable) NSString *displayName;
 @property (nonatomic, copy, readonly, nullable) NSString *productId;
 @property (nonatomic, copy, readonly, nullable) NSString *category;
-@property (nonatomic, copy, readonly, nullable) NSString *productDescription;
 @property (nonatomic, copy, readonly, nullable) NSString *quoteCurrency;
 @property (nonatomic, strong, readonly, nullable) Price *currentPrice;
 @property (nonatomic, strong, readonly, nullable) Price *closingPrice;

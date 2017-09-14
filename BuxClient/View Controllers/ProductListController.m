@@ -13,7 +13,6 @@
 #import "ProductListViewModel.h"
 #import "ProductListSectionHeaderView.h"
 
-
 const CGFloat kProductListCellHeight = 60.0f;
 const CGFloat kProductListHeaderHeight = 24.0f;
 

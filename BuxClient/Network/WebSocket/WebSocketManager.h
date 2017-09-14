@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Product;
+
 @protocol WebSocketDelegate;
 @protocol RequestBuilderProtocol;
 
@@ -16,5 +18,8 @@
 @property (nonatomic, weak) id <WebSocketDelegate> delegate;
 
 - (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder;
+
+- (void)subscribeToProuduct:(Product *)product;
+- (void)unsubscribeFromProduct:(Product *)product;
 
 @end

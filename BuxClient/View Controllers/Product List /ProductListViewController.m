@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	[self setupUI];
+	[self.dataCoordinator retrieveProducts];
 }
 
 - (void)setupUI {
@@ -48,8 +49,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
-	[self.dataCoordinator retrieveProducts];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,8 +64,10 @@
 #pragma mark - ProductListControllerDelegate -
 
 - (void)presentDetailsForProduct:(Product *)product {
-	
+	ProductDetailsViewController *controller = [ProductDetailsViewController new];
+	controller.dataCoordinator = self.dataCoordinator;
+	controller.product = product;
+	[self.navigationController pushViewController:controller animated:YES];
 }
-
 
 @end
