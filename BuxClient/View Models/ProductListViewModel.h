@@ -13,6 +13,7 @@
 @interface ProductListViewModel : NSObject
 
 @property (nonatomic, copy, readonly, nonnull) NSString *displayName;
+@property (nonatomic, copy, readonly, nonnull) NSString *category;
 
 - (nullable instancetype)initWithProduct:(nonnull Product *)product;
 

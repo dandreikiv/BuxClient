@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "DataCoordinator.h"
+#import "RequestBuilder.h"
+#import "ConnectionConfiguration.h"
 #import "ProductsListViewController.h"
 
 @interface AppDelegate ()
@@ -15,12 +18,18 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
 	
 	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	
+	ConnectionConfiguration *configuration = [ConnectionConfiguration new];
+	RequestBuilder *requestBuilder = [[RequestBuilder alloc] initWithConfigurataion:configuration];
+	DataCoordinator *dataCoordinataor = [[DataCoordinator alloc] initWithRequsetBuilder:requestBuilder];
+	
 	ProductsListViewController *productsListViewController = [ProductsListViewController new];
+	productsListViewController.dataCoordinator = dataCoordinataor;
+	dataCoordinataor.coordinatorOutput = productsListViewController; // weak property.
 	
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:productsListViewController];
 	[self.window makeKeyAndVisible];

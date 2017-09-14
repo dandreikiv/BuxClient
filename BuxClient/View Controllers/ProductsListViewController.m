@@ -7,8 +7,12 @@
 //
 
 #import "ProductsListViewController.h"
+#import "ProductListViewModel.h"
+#import "DataCoordinator.h"
 
 @interface ProductsListViewController ()
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -21,9 +25,19 @@
 	self.view.backgroundColor = [UIColor whiteColor];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	[self.dataCoordinator retrieveProducts];
+}
+
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+- (void)updateListWithProducts:(NSArray <ProductListViewModel *> *)products {
+	NSLog(@"Products:%@", products);
 }
 
 @end
