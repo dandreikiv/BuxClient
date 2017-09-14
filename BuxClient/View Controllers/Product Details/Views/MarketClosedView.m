@@ -46,7 +46,7 @@
 	[self.title.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
 	
 	self.message = [UILabel new];
-	self.message.font = [UIFont fontWithName:@"ArialRoundedMT" size:20.0];
+	self.message.font = [UIFont fontWithName:@"Courier-Bold" size:18.0];
 	self.message.textColor = [UIColor blackColor];
 	self.message.textAlignment = NSTextAlignmentCenter;
 	self.message.text = NSLocalizedString(@"Market is closed", nil);
