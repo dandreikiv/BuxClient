@@ -21,6 +21,7 @@
 		85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */; };
 		85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */; };
+		85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73261F6A872D00069B41 /* DataCoordinator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
 		85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilderProtocol.h; sourceTree = "<group>"; };
 		85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilderTests.m; sourceTree = "<group>"; };
+		85EA73251F6A872D00069B41 /* DataCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCoordinator.h; sourceTree = "<group>"; };
+		85EA73261F6A872D00069B41 /* DataCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataCoordinator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,7 @@
 			children = (
 				85CDDC3E1F66F95F00395B6D /* Models */,
 				85CDDC3F1F66F97500395B6D /* Network Manager */,
+				85EA73281F6A873900069B41 /* Data Coordinator */,
 				85A4BFF41F66F70300065E36 /* AppDelegate.h */,
 				85A4BFF51F66F70300065E36 /* AppDelegate.m */,
 				85A4BFF71F66F70300065E36 /* ProductsListViewController.h */,
@@ -156,6 +160,15 @@
 				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
 			);
 			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		85EA73281F6A873900069B41 /* Data Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				85EA73251F6A872D00069B41 /* DataCoordinator.h */,
+				85EA73261F6A872D00069B41 /* DataCoordinator.m */,
+			);
+			path = "Data Coordinator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +277,7 @@
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */,
+				85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */,
 				85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */,
 				85C909ED1F6A66F600A81684 /* Price.m in Sources */,
 				85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */,
