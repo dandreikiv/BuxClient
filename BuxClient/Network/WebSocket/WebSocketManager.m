@@ -64,6 +64,10 @@
 	}
 }
 
+- (void)dealloc {
+	[self.socket close];
+}
+
 #pragma mark - Private -
 
 - (NSDictionary *)messageDictionaryFromString:(NSString *)message {
