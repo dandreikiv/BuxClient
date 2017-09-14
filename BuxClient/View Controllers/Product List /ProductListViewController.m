@@ -6,20 +6,21 @@
 //  Copyright © 2017 Dmytro Andreikiv. All rights reserved.
 //
 
-#import "ProductsListViewController.h"
+#import "ProductListViewController.h"
+#import "ProductDetailsViewController.h"
 #import "Product.h"
 #import "DataCoordinator.h"
 #import "ProductListController.h"
 #import "ProductListControllerDelegate.h"
 
-@interface ProductsListViewController () <ProductListControllerDelegate>
+@interface ProductListViewController () <ProductListControllerDelegate>
 
 @property (nonatomic, strong) UITableView *productsList;
 @property (nonatomic, strong) ProductListController *productListController;
 
 @end
 
-@implementation ProductsListViewController
+@implementation ProductListViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];

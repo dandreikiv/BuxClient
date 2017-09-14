@@ -11,7 +11,7 @@
 
 @class DataCoordinator;
 
-@interface ProductsListViewController : UIViewController <DataCoordinatorOutput>
+@interface ProductListViewController : UIViewController <DataCoordinatorOutput>
 
 @property (nonatomic, strong) DataCoordinator *dataCoordinator;
 
