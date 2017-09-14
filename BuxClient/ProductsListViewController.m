@@ -6,13 +6,13 @@
 //  Copyright © 2017 Dmytro Andreikiv. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ProductsListViewController.h"
 
-@interface ViewController ()
+@interface ProductsListViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ProductsListViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
