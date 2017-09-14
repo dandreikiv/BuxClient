@@ -9,7 +9,6 @@
 #import "WebSocketErrorMessage.h"
 
 static NSString *const kWebSocketError = @"WebSocketError";
-static NSString *const kMessageTypeFailed = @"connect.failed";
 static NSString *const kErrorMessagePath = @"body.developerMessage";
 
 @interface WebSocketErrorMessage()

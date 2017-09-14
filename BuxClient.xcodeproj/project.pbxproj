@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		59DBFDCAF42EABF5E1A4383B /* libPods-BuxClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 708694361C784F864C9EF120 /* libPods-BuxClient.a */; };
+		8526BD171F6A8F3000D8BB76 /* WebSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8526BD161F6A8F3000D8BB76 /* WebSocketMessage.m */; };
+		858A90C51F6AC35E001E544B /* WebSocketErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C41F6AC35E001E544B /* WebSocketErrorMessage.m */; };
+		858A90C81F6AC379001E544B /* WebSocketQuoteMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C71F6AC379001E544B /* WebSocketQuoteMessage.m */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductsListViewController.m */; };
@@ -39,6 +42,14 @@
 /* Begin PBXFileReference section */
 		6C6F7D42161BC17FC510D42E /* Pods-BuxClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.debug.xcconfig"; sourceTree = "<group>"; };
 		708694361C784F864C9EF120 /* libPods-BuxClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuxClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8526BD151F6A8F3000D8BB76 /* WebSocketMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketMessage.h; sourceTree = "<group>"; };
+		8526BD161F6A8F3000D8BB76 /* WebSocketMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessage.m; sourceTree = "<group>"; };
+		8526BD181F6A8F5200D8BB76 /* WebSocketMessageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketMessageType.h; sourceTree = "<group>"; };
+		8544C7F41F6A8C5700930435 /* WebSocketDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketDelegate.h; sourceTree = "<group>"; };
+		858A90C31F6AC35E001E544B /* WebSocketErrorMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketErrorMessage.h; sourceTree = "<group>"; };
+		858A90C41F6AC35E001E544B /* WebSocketErrorMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketErrorMessage.m; sourceTree = "<group>"; };
+		858A90C61F6AC379001E544B /* WebSocketQuoteMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketQuoteMessage.h; sourceTree = "<group>"; };
+		858A90C71F6AC379001E544B /* WebSocketQuoteMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketQuoteMessage.m; sourceTree = "<group>"; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +106,14 @@
 			children = (
 				85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */,
 				85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */,
+				8544C7F41F6A8C5700930435 /* WebSocketDelegate.h */,
+				8526BD151F6A8F3000D8BB76 /* WebSocketMessage.h */,
+				8526BD161F6A8F3000D8BB76 /* WebSocketMessage.m */,
+				858A90C31F6AC35E001E544B /* WebSocketErrorMessage.h */,
+				858A90C41F6AC35E001E544B /* WebSocketErrorMessage.m */,
+				858A90C61F6AC379001E544B /* WebSocketQuoteMessage.h */,
+				858A90C71F6AC379001E544B /* WebSocketQuoteMessage.m */,
+				8526BD181F6A8F5200D8BB76 /* WebSocketMessageType.h */,
 			);
 			path = WebSocket;
 			sourceTree = "<group>";
@@ -364,11 +383,14 @@
 			files = (
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */,
+				858A90C51F6AC35E001E544B /* WebSocketErrorMessage.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */,
 				85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */,
+				8526BD171F6A8F3000D8BB76 /* WebSocketMessage.m in Sources */,
 				85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */,
 				85C909ED1F6A66F600A81684 /* Price.m in Sources */,
+				858A90C81F6AC379001E544B /* WebSocketQuoteMessage.m in Sources */,
 				85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */,
 				85A4BFF31F66F70300065E36 /* main.m in Sources */,
 				85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */,

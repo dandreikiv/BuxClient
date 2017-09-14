@@ -8,6 +8,8 @@
 
 @protocol WebSocketDelegate <NSObject>
 
+- (void)didConnect;
+- (void)didFailedToConnectWithError:(NSError *)error;
 - (void)didGetQuoteAmount:(NSNumber *)amount forProductWithId:(NSString *)productId;
 
 @end
