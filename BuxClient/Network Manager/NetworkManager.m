@@ -10,13 +10,12 @@
 
 @implementation NetworkManager
 
-- (void)retrieveProductsWithCompletion:(void (^)(NSData *, NSError *))completion {
-	
-}
-
-- (void)retrieveDetailsWithProduct:(Product *)product
-						completion:(void (^)(NSData *, NSError *))completion {
-	
+- (void)performRequest:(NSURLRequest *)request completion:(void (^)(NSData *, NSError *))completion {
+	completion = completion ?: ^(NSData *data, NSError *error){};
+	NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+		completion(data, error);
+	}];
+	[task resume];
 }
 
 @end

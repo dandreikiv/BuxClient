@@ -8,13 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class Product;
-
 @interface NetworkManager : NSObject
 
-- (void)retrieveProductsWithCompletion:(void (^)(NSData *, NSError *))completion;
-
-- (void)retrieveDetailsWithProduct:(Product *)product
-						completion:(void (^)(NSData *, NSError *))completion;
+- (void)performRequest:(NSURLRequest *)request completion:(void (^)(NSData *, NSError *))completion;
 
 @end

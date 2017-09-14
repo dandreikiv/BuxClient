@@ -14,6 +14,7 @@
 		85A4BFFE1F66F70300065E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFD1F66F70300065E36 /* Assets.xcassets */; };
 		85A4C0011F66F70300065E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFF1F66F70300065E36 /* LaunchScreen.storyboard */; };
 		85A4C00C1F66F70300065E36 /* BuxClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4C00B1F66F70300065E36 /* BuxClientTests.m */; };
+		85C909ED1F6A66F600A81684 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C909EC1F6A66F600A81684 /* Price.m */; };
 		85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC351F66F78700395B6D /* NetworkManager.m */; };
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
@@ -43,6 +44,8 @@
 		85A4C0071F66F70300065E36 /* BuxClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuxClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4C00B1F66F70300065E36 /* BuxClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuxClientTests.m; sourceTree = "<group>"; };
 		85A4C00D1F66F70300065E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85C909EB1F6A66F600A81684 /* Price.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
+		85C909EC1F6A66F600A81684 /* Price.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		85CDDC341F66F78700395B6D /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		85CDDC351F66F78700395B6D /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		85CDDC371F66F80900395B6D /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 		85CDDC3E1F66F95F00395B6D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				85C909EB1F6A66F600A81684 /* Price.h */,
+				85C909EC1F6A66F600A81684 /* Price.m */,
 				85CDDC3B1F66F93100395B6D /* Product.h */,
 				85CDDC3C1F66F93100395B6D /* Product.m */,
 			);
@@ -189,8 +194,6 @@
 				TargetAttributes = {
 					85A4BFED1F66F70300065E36 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 7N34RARQJ8;
-						ProvisioningStyle = Automatic;
 					};
 					85A4C0061F66F70300065E36 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -248,6 +251,7 @@
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ViewController.m in Sources */,
+				85C909ED1F6A66F600A81684 /* Price.m in Sources */,
 				85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */,
 				85A4BFF31F66F70300065E36 /* main.m in Sources */,
 			);
@@ -395,7 +399,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7N34RARQJ8;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -408,7 +411,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 7N34RARQJ8;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
