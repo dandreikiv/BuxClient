@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59DBFDCAF42EABF5E1A4383B /* libPods-BuxClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 708694361C784F864C9EF120 /* libPods-BuxClient.a */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductsListViewController.m */; };
@@ -22,6 +23,7 @@
 		85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */; };
 		85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73261F6A872D00069B41 /* DataCoordinator.m */; };
+		85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C6F7D42161BC17FC510D42E /* Pods-BuxClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.debug.xcconfig"; sourceTree = "<group>"; };
+		708694361C784F864C9EF120 /* libPods-BuxClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BuxClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +66,9 @@
 		85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilderTests.m; sourceTree = "<group>"; };
 		85EA73251F6A872D00069B41 /* DataCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCoordinator.h; sourceTree = "<group>"; };
 		85EA73261F6A872D00069B41 /* DataCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataCoordinator.m; sourceTree = "<group>"; };
+		85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
+		85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
+		A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DBFDCAF42EABF5E1A4383B /* libPods-BuxClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +96,8 @@
 				85A4BFF01F66F70300065E36 /* BuxClient */,
 				85A4C00A1F66F70300065E36 /* BuxClientTests */,
 				85A4BFEF1F66F70300065E36 /* Products */,
+				D1209C47DE8A976935794899 /* Pods */,
+				C8DB743EC769D45A2B05E024 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +168,8 @@
 				85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */,
 				85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */,
 				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
+				85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */,
+				85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -171,6 +183,23 @@
 			path = "Data Coordinator";
 			sourceTree = "<group>";
 		};
+		C8DB743EC769D45A2B05E024 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				708694361C784F864C9EF120 /* libPods-BuxClient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1209C47DE8A976935794899 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C6F7D42161BC17FC510D42E /* Pods-BuxClient.debug.xcconfig */,
+				A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85A4C0101F66F70300065E36 /* Build configuration list for PBXNativeTarget "BuxClient" */;
 			buildPhases = (
+				6C5729D8CA131497729CD63D /* [CP] Check Pods Manifest.lock */,
 				85A4BFEA1F66F70300065E36 /* Sources */,
 				85A4BFEB1F66F70300065E36 /* Frameworks */,
 				85A4BFEC1F66F70300065E36 /* Resources */,
+				2282F94BF0ABD39273407856 /* [CP] Embed Pods Frameworks */,
+				574B92FB44FC47A8FAC64CF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,12 +301,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2282F94BF0ABD39273407856 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		574B92FB44FC47A8FAC64CF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C5729D8CA131497729CD63D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85A4BFEA1F66F70300065E36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
+				85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */,
 				85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */,
@@ -419,6 +500,7 @@
 		};
 		85A4C0111F66F70300065E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C6F7D42161BC17FC510D42E /* Pods-BuxClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
@@ -431,6 +513,7 @@
 		};
 		85A4C0121F66F70300065E36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
