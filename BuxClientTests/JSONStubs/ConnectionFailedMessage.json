@@ -1,0 +1,8 @@
+{
+	"t": "connect.failed",
+	"body": {
+		"developerMessage": "Missing JWT Access Token in request",
+		"errorCode": "RTF_002"
+	}
+}
+
