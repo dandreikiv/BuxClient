@@ -19,6 +19,7 @@
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
 		85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */; };
+		85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		85CDDC3C1F66F93100395B6D /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		85EA731B1F6A6A4900069B41 /* ConnectionConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionConfiguration.h; sourceTree = "<group>"; };
 		85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionConfiguration.m; sourceTree = "<group>"; };
+		85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
+		85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				85CDDC371F66F80900395B6D /* Configuration.plist */,
 				85EA731B1F6A6A4900069B41 /* ConnectionConfiguration.h */,
 				85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */,
+				85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */,
+				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ViewController.m in Sources */,
+				85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */,
 				85C909ED1F6A66F600A81684 /* Price.m in Sources */,
 				85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */,
 				85A4BFF31F66F70300065E36 /* main.m in Sources */,
