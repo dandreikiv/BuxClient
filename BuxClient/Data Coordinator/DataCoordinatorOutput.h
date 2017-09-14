@@ -12,6 +12,9 @@
 
 - (void)updateListWithProducts:(NSArray <Product *> *)products;
 
+@optional
+- (void)presentRetrieveProductsError:(NSError *)error;
+
 @end
 
 @protocol DataCoordinatorProductDetailsOutput <NSObject>

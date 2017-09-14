@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UILabel *market;
 @property (nonatomic, strong) UILabel *currentPrice;
 @property (nonatomic, strong) UILabel *priceChange;
+@property (nonatomic, strong) UILabel *socketStatus;
 
 @property (nonatomic, strong) ProductDetailsViewModel *viewModel;
 

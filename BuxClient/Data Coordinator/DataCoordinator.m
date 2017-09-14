@@ -8,6 +8,7 @@
 
 #import "DataCoordinator.h"
 #import "DataCoordinatorOutput.h"
+#import "DataStorageProtocol.h"
 #import "NetworkManager.h"
 #import "Product.h"
 #import "Price.h"
@@ -21,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray <Product *> * products;
 
 @property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
+@property (nonatomic, strong) id <DataStorageProtocol> dataStorage;
 @property (nonatomic, strong) NetworkManager *networkManager;
 @property (nonatomic, strong) WebSocketManager *webSocketManager;
 
@@ -28,10 +30,13 @@
 
 @implementation DataCoordinator
 
-- (instancetype)initWithRequsetBuilder:(id <RequestBuilderProtocol>)requestBuilder {
+- (instancetype)initWithRequsetBuilder:(id <RequestBuilderProtocol>)requestBuilder
+						   dataStorage:(id <DataStorageProtocol>)dataStorage
+{
 	self = [super init];
 	if (self) {
 		self.requestBuilder = requestBuilder;
+		self.dataStorage = dataStorage;
 		
 		self.products = [NSMutableArray new];
 		self.networkManager = [NetworkManager new];
@@ -44,7 +49,7 @@
 - (void)retrieveProducts {
 	[self.networkManager performRequest:[self.requestBuilder productsRequest] completion:^(NSData *data, NSError *error) {
 		if (error) {
-			[self presentRetriveProductsError:error];
+			[self presentRetrieveProductsError:error];
 		}
 		else {
 			[self.products removeAllObjects];
@@ -57,7 +62,7 @@
 	NSURLRequest *request = [self.requestBuilder productDetailsRequestWithProduct:product];
 	[self.networkManager performRequest:request completion:^(NSData *data, NSError *error) {
 		if (error) {
-			[self presentRetriveProductsError:error];
+			[self presentRetrieveProductsError:error];
 		}
 		else {
 			NSDictionary *productDictionary = [NSJSONSerialization JSONObjectWithData:data
@@ -81,8 +86,12 @@
 	[self.webSocketManager unsubscribeFromProduct:product];
 }
 
-- (void)presentRetriveProductsError:(NSError *)error {
-
+- (void)presentRetrieveProductsError:(NSError *)error {
+	if ([self.productListOutput respondsToSelector:@selector(presentRetrieveProductsError:)]) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.productListOutput presentRetrieveProductsError:error];
+		});
+	}
 }
 
 - (void)storeReceivedProductsAndUpdateList:(NSData *)data {

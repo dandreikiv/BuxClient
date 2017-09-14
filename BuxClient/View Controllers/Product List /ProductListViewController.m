@@ -56,9 +56,23 @@
 	// Dispose of any resources that can be recreated.
 }
 
+#pragma mark - DataCoordinatorProductListOutput -
+
 - (void)updateListWithProducts:(NSArray <Product *> *)products {
 	self.productListController.products = products;
 	[self.productsList reloadData];
+}
+
+- (void)presentRetrieveProductsError:(NSError *)error {
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Bux Client", nil)
+																   message:error.localizedDescription
+															preferredStyle:UIAlertControllerStyleAlert];
+	
+	UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok"
+													 style:UIAlertActionStyleDefault
+												   handler:nil];
+	[alert addAction:action];
+	[self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - ProductListControllerDelegate -

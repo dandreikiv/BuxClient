@@ -15,6 +15,7 @@
 		858A90CD1F6AF114001E544B /* ConnectionFailedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */; };
 		858A90CF1F6AF3A0001E544B /* TradingQouteMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */; };
 		8598F2391F6B35420010FB12 /* ProductDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */; };
+		8598F23D1F6B47350010FB12 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8598F23C1F6B47350010FB12 /* DataStorage.m */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductListViewController.m */; };
@@ -67,6 +68,9 @@
 		8598F2361F6B33E10010FB12 /* WebsocketStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebsocketStatus.h; sourceTree = "<group>"; };
 		8598F2371F6B35420010FB12 /* ProductDetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewModel.h; sourceTree = "<group>"; };
 		8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewModel.m; sourceTree = "<group>"; };
+		8598F23A1F6B45B00010FB12 /* DataStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStorageProtocol.h; sourceTree = "<group>"; };
+		8598F23B1F6B47350010FB12 /* DataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
+		8598F23C1F6B47350010FB12 /* DataStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -304,6 +308,9 @@
 				85EA73251F6A872D00069B41 /* DataCoordinator.h */,
 				85EA73261F6A872D00069B41 /* DataCoordinator.m */,
 				858A90D01F6AF817001E544B /* DataCoordinatorOutput.h */,
+				8598F23A1F6B45B00010FB12 /* DataStorageProtocol.h */,
+				8598F23B1F6B47350010FB12 /* DataStorage.h */,
+				8598F23C1F6B47350010FB12 /* DataStorage.m */,
 			);
 			path = "Data Coordinator";
 			sourceTree = "<group>";
@@ -501,6 +508,7 @@
 				85E07B041F6B248B00BBA715 /* MarketClosedView.m in Sources */,
 				85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */,
 				8598F2391F6B35420010FB12 /* ProductDetailsViewModel.m in Sources */,
+				8598F23D1F6B47350010FB12 /* DataStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
