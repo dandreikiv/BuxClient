@@ -13,12 +13,26 @@
 
 @interface WebSocketMessageTests : XCTestCase
 
+@property (nonatomic, strong) WebSocketMessage *messageWithConnectionFailedJSON;
+@property (nonatomic, strong) WebSocketMessage *messageWithTradingQouteJSON;
+
 @end
 
 @implementation WebSocketMessageTests
 
 - (void)setUp {
     [super setUp];
+	
+	NSString *connectionFailedJSONPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"ConnectionFailedMessage" ofType:@"json"];
+	NSData *connectionFailedData = [NSData dataWithContentsOfFile:connectionFailedJSONPath];
+	NSDictionary *connectionFailedDictionary = [self messageDictionaryFromData:connectionFailedData];
+	self.messageWithConnectionFailedJSON = [[WebSocketMessage alloc] initWithDictionary:connectionFailedDictionary];
+	
+	
+	NSString *tradingQuoteMessageJSONPath = [[NSBundle bundleForClass:[self class]] pathForResource:@"TradingQouteMessage" ofType:@"json"];
+	NSData *tradionqQoteData = [NSData dataWithContentsOfFile:tradingQuoteMessageJSONPath];
+	NSDictionary *tradingQouteDictionary = [self messageDictionaryFromData:tradionqQoteData];
+	self.messageWithTradingQouteJSON = [[WebSocketMessage alloc] initWithDictionary:tradingQouteDictionary];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -28,42 +42,36 @@
 }
 
 - (void)testWebSocketMessageHasConnectionFailedType {
+	XCTAssertTrue(self.messageWithConnectionFailedJSON.type == WebSocketMessageTypeFailed);
+}
+
+- (void)testWebSocketErrorMessageHasProperErrorMessage {
 	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"ConnectionFailedMessage" ofType:@"json"];
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	NSDictionary *messageDictionary = [self messageDictionaryFromData:data];
-	WebSocketMessage *message = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
-	XCTAssertTrue(message.type == WebSocketMessageTypeFailed);
+	WebSocketErrorMessage *message = [[WebSocketErrorMessage alloc] initWithDictionary:messageDictionary];
+	XCTAssertNotNil(message.error);
+	XCTAssertNotNil(message.error.localizedDescription);
+	
+	NSString *errorMessage = [messageDictionary valueForKeyPath:@"body.developerMessage"];
+	XCTAssertTrue([message.error.localizedDescription isEqualToString:errorMessage]);
 }
 
 - (void)testWebSocketMessageReturnsMessageFailedInstance {
-	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"ConnectionFailedMessage" ofType:@"json"];
-	NSData *data = [NSData dataWithContentsOfFile:path];
-	NSDictionary *messageDictionary = [self messageDictionaryFromData:data];
-	WebSocketMessage *message = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
-	
-	WebSocketErrorMessage *errorMessage = [message buildErorrMessage];
-	WebSocketQuoteMessage *quoteMessage = [message buildQuoteMessage];
+	WebSocketErrorMessage *errorMessage = [self.messageWithConnectionFailedJSON buildErorrMessage];
+	WebSocketQuoteMessage *quoteMessage = [self.messageWithConnectionFailedJSON buildQuoteMessage];
 	
 	XCTAssertTrue([errorMessage isKindOfClass:[WebSocketErrorMessage class]]);
 	XCTAssertNil(quoteMessage);
 }
 
 - (void)testWebSocketMessageHasTradingQouteType {
-	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"TradingQouteMessage" ofType:@"json"];
-	NSData *data = [NSData dataWithContentsOfFile:path];
-	NSDictionary *messageDictionary = [self messageDictionaryFromData:data];
-	WebSocketMessage *message = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
-	XCTAssertTrue(message.type == WebSocketMessageTypeQuote);
+	XCTAssertTrue(self.messageWithTradingQouteJSON.type == WebSocketMessageTypeQuote);
 }
 
 - (void)testWebSocketMessageReturnsMessagQouteInstance {
-	NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"TradingQouteMessage" ofType:@"json"];
-	NSData *data = [NSData dataWithContentsOfFile:path];
-	NSDictionary *messageDictionary = [self messageDictionaryFromData:data];
-	WebSocketMessage *message = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
-	
-	WebSocketErrorMessage *errorMessage = [message buildErorrMessage];
-	WebSocketQuoteMessage *quoteMessage = [message buildQuoteMessage];
+	WebSocketErrorMessage *errorMessage = [self.messageWithTradingQouteJSON buildErorrMessage];
+	WebSocketQuoteMessage *quoteMessage = [self.messageWithTradingQouteJSON buildQuoteMessage];
 	
 	XCTAssertTrue([quoteMessage isKindOfClass:[WebSocketQuoteMessage class]]);
 	XCTAssertNil(errorMessage);
