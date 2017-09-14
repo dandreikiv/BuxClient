@@ -7,7 +7,7 @@
 //
 
 #import "WebSocketManager.h"
-#import "RequestBuilder.h"
+#import "RequestBuilderProtocol.h"
 #import "SRWebSocket.h"
 
 @interface WebSocketManager() <SRWebSocketDelegate>
@@ -18,7 +18,7 @@
 
 @implementation WebSocketManager
 
-- (instancetype)initWithRequestBuilder:(RequestBuilder *)requestBuilder {
+- (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder {
 	self = [super init];
 	if (self) {
 		self.socket = [[SRWebSocket alloc] initWithURLRequest:requestBuilder.webSocketRequest];
