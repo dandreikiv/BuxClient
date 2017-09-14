@@ -37,7 +37,7 @@
 	self.marketClosedView = [MarketClosedView new];
 	
 	self.market = [UILabel new];
-	self.market.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:24.0];
+	self.market.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:28.0];
 	self.market.textColor = [UIColor blackColor];
 	self.market.textAlignment = NSTextAlignmentCenter;
 	self.market.text = self.viewModel.name;
@@ -56,7 +56,7 @@
 	[self.view addSubview:self.currentPrice];
 	
 	self.currentPrice.translatesAutoresizingMaskIntoConstraints = NO;
-	[self.currentPrice.topAnchor constraintEqualToAnchor:self.market.bottomAnchor constant:10.0f].active = YES;
+	[self.currentPrice.topAnchor constraintEqualToAnchor:self.market.bottomAnchor constant:30.0f].active = YES;
 	[self.currentPrice.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
 	
 	
