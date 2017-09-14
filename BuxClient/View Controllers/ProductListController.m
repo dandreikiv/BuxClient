@@ -10,7 +10,7 @@
 #import "Product.h"
 #import "ProductListCell.h"
 #import "ProductListViewModel.h"
-#import "ProductListSectionTitleView.h"
+#import "ProductListSectionHeaderView.h"
 
 const CGFloat kProductListCellHeight = 60.0f;
 const CGFloat kProductListHeaderHeight = 24.0f;
@@ -84,7 +84,7 @@ const CGFloat kProductListHeaderHeight = 24.0f;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	ProductListSectionTitleView *headerView = [ProductListSectionTitleView new];
+	ProductListSectionHeaderView *headerView = [ProductListSectionHeaderView new];
 	[headerView setTitleText:self.categories[section]];
 	return headerView;
 }
