@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class Product;
+
 @interface DataCoordinator : NSObject
 
 - (instancetype)initWithDataStorage:(id)dataStorage;
+
+- (void)retrieveProducts;
+- (void)retrieveDetailsWithProduct:(Product *)product;
+
+- (void)subscribeToProduct:(Product *)product;
+- (void)subscribeUnsubscribeFrom:(Product *)product;
 
 @end
