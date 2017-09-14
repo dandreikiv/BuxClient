@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class RequestBuilder;
+@protocol WebSocketDelegate;
+@protocol RequestBuilderProtocol;
 
 @interface WebSocketManager : NSObject
 
-- (instancetype)initWithRequestBuilder:(RequestBuilder *)requestBuilder;
+@property (nonatomic, weak) id <WebSocketDelegate> delegate;
+
+- (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder;
 
 @end
