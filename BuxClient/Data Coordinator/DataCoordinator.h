@@ -10,9 +10,14 @@
 
 @class Product;
 
+@protocol DataCoordinatorOutput;
+@protocol RequestBuilderProtocol;
+
 @interface DataCoordinator : NSObject
 
-- (instancetype)initWithDataStorage:(id)dataStorage;
+@property (nonatomic, weak) id <DataCoordinatorOutput> coordinatorOutput;
+
+- (instancetype)initWithRequsetBuilder:(id <RequestBuilderProtocol>)requestBuilder;
 
 - (void)retrieveProducts;
 - (void)retrieveDetailsWithProduct:(Product *)product;
