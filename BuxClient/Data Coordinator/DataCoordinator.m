@@ -40,28 +40,34 @@
 
 - (void)retrieveProducts {
 	[self.networkManager performRequest:[self.requestBuilder productsRequest] completion:^(NSData *data, NSError *error) {
-		
-		NSArray *productsCollection = [NSJSONSerialization JSONObjectWithData:data
-																  options:NSJSONReadingMutableContainers
-																	error:NULL];
-		for (NSDictionary *productDictionary in productsCollection) {
-			Product *product = [[Product alloc] initWithDictionary:productDictionary];
-			[self.products addObject:product];
+		if (error) {
+			[self presentRetriveProductsError:error];
 		}
-		
-		if ([self.coordinatorOutput respondsToSelector:@selector(updateListWithProducts:)]) {
-			[self.coordinatorOutput updateListWithProducts:[self productViewModelsFromProducts]];
+		else {
+			[self.products removeAllObjects];
+			[self storeReceivedProductsAndUpdateList:data];
 		}
 	}];
 }
 
-- (NSArray <ProductListViewModel *> *)productViewModelsFromProducts {
-	NSMutableArray *viewModels = [[NSMutableArray alloc] initWithCapacity:self.products.count];
-	for (Product *product in self.products) {
-		[viewModels addObject:[[ProductListViewModel alloc] initWithProduct:product]];
-	}
-	return [viewModels copy];
+- (void)presentRetriveProductsError:(NSError *)error {
 	
+}
+
+- (void)storeReceivedProductsAndUpdateList:(NSData *)data {
+	NSArray *productsCollection = [NSJSONSerialization JSONObjectWithData:data
+																  options:NSJSONReadingMutableContainers
+																	error:NULL];
+	for (NSDictionary *productDictionary in productsCollection) {
+		Product *product = [[Product alloc] initWithDictionary:productDictionary];
+		[self.products addObject:product];
+	}
+	
+	if ([self.coordinatorOutput respondsToSelector:@selector(updateListWithProducts:)]) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.coordinatorOutput updateListWithProducts:self.products];
+		});
+	}
 }
 
 @end

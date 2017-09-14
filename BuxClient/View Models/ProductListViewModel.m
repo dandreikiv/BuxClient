@@ -22,7 +22,7 @@
 	self = [super init];
 	if (self) {
 		self.displayName = [product.displayName uppercaseString];
-		self.category = [product.category capitalizedString];
+		self.category = [product.category lowercaseString];
 	}
 	return self;
 }

@@ -6,10 +6,10 @@
 //  Copyright © 2017 Dmytro Andreikiv. All rights reserved.
 //
 
-@class ProductListViewModel;
+@class Product;
 
 @protocol DataCoordinatorOutput <NSObject>
 
-- (void)updateListWithProducts:(NSArray <ProductListViewModel *> *)products;
+- (void)updateListWithProducts:(NSArray <Product *> *)products;
 
 @end
