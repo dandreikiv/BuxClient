@@ -137,6 +137,16 @@
 			path = JSONStubs;
 			sourceTree = "<group>";
 		};
+		858A90D41F6AF9AB001E544B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				858A90D11F6AF8B8001E544B /* ProductListViewModel.h */,
+				858A90D21F6AF8B8001E544B /* ProductListViewModel.m */,
+			);
+			name = "View Models";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		85A4BFE51F66F70300065E36 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				85CDDC3E1F66F95F00395B6D /* Models */,
+				858A90D41F6AF9AB001E544B /* View Models */,
 				85CDDC3F1F66F97500395B6D /* Network */,
 				85EA73281F6A873900069B41 /* Data Coordinator */,
 				85A4BFF41F66F70300065E36 /* AppDelegate.h */,
@@ -171,8 +182,6 @@
 				85A4BFFF1F66F70300065E36 /* LaunchScreen.storyboard */,
 				85A4C0021F66F70300065E36 /* Info.plist */,
 				85A4BFF11F66F70300065E36 /* Supporting Files */,
-				858A90D11F6AF8B8001E544B /* ProductListViewModel.h */,
-				858A90D21F6AF8B8001E544B /* ProductListViewModel.m */,
 			);
 			path = BuxClient;
 			sourceTree = "<group>";
