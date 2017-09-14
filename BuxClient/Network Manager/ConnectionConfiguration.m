@@ -25,7 +25,7 @@ static NSString *const kAuthorizationToken = @"AuthorizationToken";
 - (instancetype)init {
 	self = [super init];
 	if (self) {
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+		NSString *path = [[NSBundle bundleForClass:[self class]] pathForResource:@"Configuration" ofType:@"plist"];
 		NSDictionary *conf = [NSDictionary dictionaryWithContentsOfFile:path];
 		
 		self.baseURL = [NSURL URLWithString:conf[kBaseURL]];

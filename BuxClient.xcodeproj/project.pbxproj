@@ -13,13 +13,15 @@
 		85A4BFFC1F66F70300065E36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFA1F66F70300065E36 /* Main.storyboard */; };
 		85A4BFFE1F66F70300065E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFD1F66F70300065E36 /* Assets.xcassets */; };
 		85A4C0011F66F70300065E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFF1F66F70300065E36 /* LaunchScreen.storyboard */; };
-		85A4C00C1F66F70300065E36 /* BuxClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4C00B1F66F70300065E36 /* BuxClientTests.m */; };
+		85A4C00C1F66F70300065E36 /* ConnectionConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4C00B1F66F70300065E36 /* ConnectionConfigurationTests.m */; };
 		85C909ED1F6A66F600A81684 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C909EC1F6A66F600A81684 /* Price.m */; };
 		85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC351F66F78700395B6D /* NetworkManager.m */; };
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
 		85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */; };
 		85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */; };
+		85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
+		85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,7 @@
 		85A4C0001F66F70300065E36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85A4C0021F66F70300065E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A4C0071F66F70300065E36 /* BuxClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuxClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		85A4C00B1F66F70300065E36 /* BuxClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuxClientTests.m; sourceTree = "<group>"; };
+		85A4C00B1F66F70300065E36 /* ConnectionConfigurationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionConfigurationTests.m; sourceTree = "<group>"; };
 		85A4C00D1F66F70300065E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85C909EB1F6A66F600A81684 /* Price.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		85C909EC1F6A66F600A81684 /* Price.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
 		85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
 		85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilderProtocol.h; sourceTree = "<group>"; };
+		85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilderTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +128,8 @@
 		85A4C00A1F66F70300065E36 /* BuxClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				85A4C00B1F66F70300065E36 /* BuxClientTests.m */,
+				85A4C00B1F66F70300065E36 /* ConnectionConfigurationTests.m */,
+				85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */,
 				85A4C00D1F66F70300065E36 /* Info.plist */,
 			);
 			path = BuxClientTests;
@@ -250,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85A4C00C1F66F70300065E36 /* BuxClientTests.m in Sources */,
+				85A4C00C1F66F70300065E36 /* ConnectionConfigurationTests.m in Sources */,
+				85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
