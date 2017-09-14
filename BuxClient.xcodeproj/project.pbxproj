@@ -104,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				85CDDC3E1F66F95F00395B6D /* Models */,
-				85CDDC3F1F66F97500395B6D /* Network Manager */,
+				85CDDC3F1F66F97500395B6D /* Network */,
 				85EA73281F6A873900069B41 /* Data Coordinator */,
 				85A4BFF41F66F70300065E36 /* AppDelegate.h */,
 				85A4BFF51F66F70300065E36 /* AppDelegate.m */,
@@ -147,7 +147,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		85CDDC3F1F66F97500395B6D /* Network Manager */ = {
+		85CDDC3F1F66F97500395B6D /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				85CDDC341F66F78700395B6D /* NetworkManager.h */,
@@ -159,7 +159,7 @@
 				85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */,
 				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
 			);
-			path = "Network Manager";
+			path = Network;
 			sourceTree = "<group>";
 		};
 		85EA73281F6A873900069B41 /* Data Coordinator */ = {

@@ -10,4 +10,6 @@
 
 @interface DataCoordinator : NSObject
 
+- (instancetype)initWithDataStorage:(id)dataStorage;
+
 @end

@@ -10,4 +10,12 @@
 
 @implementation DataCoordinator
 
+- (instancetype)initWithDataStorage:(id)dataStorage {
+	self = [super init];
+	if (self) {
+		
+	}
+	return self;
+}
+
 @end
