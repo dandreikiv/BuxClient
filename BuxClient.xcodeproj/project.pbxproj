@@ -11,6 +11,9 @@
 		8526BD171F6A8F3000D8BB76 /* WebSocketMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8526BD161F6A8F3000D8BB76 /* WebSocketMessage.m */; };
 		858A90C51F6AC35E001E544B /* WebSocketErrorMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C41F6AC35E001E544B /* WebSocketErrorMessage.m */; };
 		858A90C81F6AC379001E544B /* WebSocketQuoteMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C71F6AC379001E544B /* WebSocketQuoteMessage.m */; };
+		858A90CA1F6AF07D001E544B /* WebSocketMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */; };
+		858A90CD1F6AF114001E544B /* ConnectionFailedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */; };
+		858A90CF1F6AF3A0001E544B /* TradingQouteMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductsListViewController.m */; };
@@ -50,6 +53,9 @@
 		858A90C41F6AC35E001E544B /* WebSocketErrorMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketErrorMessage.m; sourceTree = "<group>"; };
 		858A90C61F6AC379001E544B /* WebSocketQuoteMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketQuoteMessage.h; sourceTree = "<group>"; };
 		858A90C71F6AC379001E544B /* WebSocketQuoteMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketQuoteMessage.m; sourceTree = "<group>"; };
+		858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessageTests.m; sourceTree = "<group>"; };
+		858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConnectionFailedMessage.json; sourceTree = "<group>"; };
+		858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TradingQouteMessage.json; sourceTree = "<group>"; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,6 +124,15 @@
 			path = WebSocket;
 			sourceTree = "<group>";
 		};
+		858A90CB1F6AF114001E544B /* JSONStubs */ = {
+			isa = PBXGroup;
+			children = (
+				858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */,
+				858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */,
+			);
+			path = JSONStubs;
+			sourceTree = "<group>";
+		};
 		85A4BFE51F66F70300065E36 = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +182,10 @@
 		85A4C00A1F66F70300065E36 /* BuxClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				858A90CB1F6AF114001E544B /* JSONStubs */,
 				85A4C00B1F66F70300065E36 /* ConnectionConfigurationTests.m */,
 				85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */,
+				858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */,
 				85A4C00D1F66F70300065E36 /* Info.plist */,
 			);
 			path = BuxClientTests;
@@ -322,6 +339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858A90CD1F6AF114001E544B /* ConnectionFailedMessage.json in Resources */,
+				858A90CF1F6AF3A0001E544B /* TradingQouteMessage.json in Resources */,
 				85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +422,7 @@
 			files = (
 				85A4C00C1F66F70300065E36 /* ConnectionConfigurationTests.m in Sources */,
 				85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */,
+				858A90CA1F6AF07D001E544B /* WebSocketMessageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
