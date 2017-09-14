@@ -9,8 +9,10 @@
 #import "ProductListController.h"
 #import "Product.h"
 #import "ProductListCell.h"
+#import "ProductListControllerDelegate.h"
 #import "ProductListViewModel.h"
 #import "ProductListSectionHeaderView.h"
+
 
 const CGFloat kProductListCellHeight = 60.0f;
 const CGFloat kProductListHeaderHeight = 24.0f;
@@ -67,6 +69,13 @@ const CGFloat kProductListHeaderHeight = 24.0f;
 }
 
 #pragma mark - UITableViewDelegate -
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if ([self.delegate respondsToSelector:@selector(presentDetailsForProduct:)]) {
+		[self.delegate presentDetailsForProduct:[self productAtIndexPath:indexPath]];
+	}
+}
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	ProductListCell *productCell = (ProductListCell *)cell;

@@ -10,8 +10,9 @@
 #import "Product.h"
 #import "DataCoordinator.h"
 #import "ProductListController.h"
+#import "ProductListControllerDelegate.h"
 
-@interface ProductsListViewController () <UITableViewDelegate>
+@interface ProductsListViewController () <ProductListControllerDelegate>
 
 @property (nonatomic, strong) UITableView *productsList;
 @property (nonatomic, strong) ProductListController *productListController;
@@ -31,6 +32,7 @@
 	self.productsList.separatorInset = UIEdgeInsetsZero;
 	
 	self.productListController = [ProductListController new];
+	self.productListController.delegate = self;
 	
 	self.productsList.delegate = self.productListController;
 	self.productsList.dataSource = self.productListController;
@@ -58,5 +60,12 @@
 	self.productListController.products = products;
 	[self.productsList reloadData];
 }
+
+#pragma mark - ProductListControllerDelegate -
+
+- (void)presentDetailsForProduct:(Product *)product {
+	
+}
+
 
 @end

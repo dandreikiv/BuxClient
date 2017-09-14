@@ -9,8 +9,11 @@
 #import <UIKit/UITableView.h>
 
 @class Product;
+@protocol ProductListControllerDelegate;
 
 @interface ProductListController : NSObject <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) id <ProductListControllerDelegate> delegate;
 
 @property (nonatomic, strong) NSArray <Product *> *products;
 
