@@ -35,6 +35,8 @@
 }
 
 - (void)setupUI {
+	self.backgroundColor = [UIColor whiteColor];
+	
 	self.title = [UILabel new];
 	self.title.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:24.0];
 	self.title.textColor = [UIColor blackColor];
