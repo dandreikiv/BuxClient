@@ -15,5 +15,6 @@
 @property (nonatomic, assign, readonly) NSUInteger decimals;
 
 - (instancetype)initWithPriceDictionary:(NSDictionary *)dictionary;
+- (void)updateAmount:(NSNumber *)amount;
 
 @end
