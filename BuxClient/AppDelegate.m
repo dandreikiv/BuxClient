@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ProductsListViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	ProductsListViewController *productsListViewController = [ProductsListViewController new];
+	
+	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:productsListViewController];
+	[self.window makeKeyAndVisible];
+	
 	return YES;
 }
 

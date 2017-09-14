@@ -7,13 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InteractorOutput.h"
 
-@protocol InteractorInput;
-
-@interface ProductsViewController : UIViewController <InteractorOutput>
-
-@property (nonatomic, strong) id <InteractorInput> interactor;
+@interface ProductsViewController : UIViewController
 
 @end
 
