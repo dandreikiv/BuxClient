@@ -16,9 +16,9 @@
 
 @property (nonatomic, assign, readonly) WebSocketMessageType type;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
-- (WebSocketErrorMessage *)buildErorrMessage;
-- (WebSocketQuoteMessage *)buildQuoteMessage;
+- (nullable WebSocketErrorMessage *)buildErorrMessage;
+- (nullable WebSocketQuoteMessage *)buildQuoteMessage;
 
 @end

@@ -35,10 +35,16 @@ static NSString *const kMessageTypeQuote = @"trading.quote";
 }
 
 - (WebSocketErrorMessage *)buildErorrMessage {
+	if (self.type != WebSocketMessageTypeFailed) {
+		return nil;
+	}
 	return [[WebSocketErrorMessage alloc] initWithDictionary:self.dictionary];
 }
 
 - (WebSocketQuoteMessage *)buildQuoteMessage {
+	if (self.type != WebSocketMessageTypeQuote) {
+		return nil;
+	}
 	return [[WebSocketQuoteMessage alloc] initWithDictionary:self.dictionary];
 }
 
