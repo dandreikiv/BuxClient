@@ -10,11 +10,13 @@
 #import "DataCoordinatorOutput.h"
 #import "NetworkManager.h"
 #import "Product.h"
+#import "Price.h"
 #import "ProductListViewModel.h"
 #import "RequestBuilderProtocol.h"
 #import "WebSocketManager.h"
+#import "WebSocketManagerDelegate.h"
 
-@interface DataCoordinator()
+@interface DataCoordinator() <WebSocketManagerDelegate>
 
 @property (nonatomic, strong) NSMutableArray <Product *> * products;
 
@@ -34,6 +36,7 @@
 		self.products = [NSMutableArray new];
 		self.networkManager = [NetworkManager new];
 		self.webSocketManager = [[WebSocketManager alloc] initWithRequestBuilder:self.requestBuilder];
+		self.webSocketManager.delegate = self;
 	}
 	return self;
 }
@@ -96,6 +99,24 @@
 			[self.productListOutput updateListWithProducts:self.products];
 		});
 	}
+}
+
+#pragma mark - WebSocketManagerDelegate -
+
+- (void)didGetQuoteAmount:(NSNumber *)amount forProductWithId:(NSString *)productId {
+	Product *product = [self productWithId:productId];
+	[product.currentPrice updateAmount:amount];
+	
+	if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.productDetailsOutput updateWithProduct:product];
+		});
+	}
+}
+
+- (Product *)productWithId:(NSString *)productId {
+	NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"productId = %@", productId];
+	return [self.products filteredArrayUsingPredicate:filterPredicate].firstObject;
 }
 
 @end

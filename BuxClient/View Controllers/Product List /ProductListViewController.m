@@ -65,8 +65,8 @@
 
 - (void)presentDetailsForProduct:(Product *)product {
 	ProductDetailsViewController *controller = [ProductDetailsViewController new];
-	controller.dataCoordinator = self.dataCoordinator;
 	controller.product = product;
+	controller.dataCoordinator = self.dataCoordinator;
 	[self.navigationController pushViewController:controller animated:YES];
 }
 

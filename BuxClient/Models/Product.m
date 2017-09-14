@@ -54,7 +54,7 @@ static NSString *const kDisplayDecimals = @"displayDecimals";
 }
 
 - (NSString *)description {
-	return [NSString stringWithFormat:@"%@: %@", self.displayName, self.productId];
+	return [NSString stringWithFormat:@"%@: %@: %@", self.displayName, self.productId, self.currentPrice.amount];
 }
 
 - (BOOL)isEqual:(Product *)object {

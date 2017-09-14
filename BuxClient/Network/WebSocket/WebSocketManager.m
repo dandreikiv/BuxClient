@@ -7,7 +7,7 @@
 //
 
 #import "WebSocketManager.h"
-#import "WebSocketDelegate.h"
+#import "WebSocketManagerDelegate.h"
 #import "WebSocketMessage.h"
 #import "WebSocketErrorMessage.h"
 #import "WebSocketQuoteMessage.h"

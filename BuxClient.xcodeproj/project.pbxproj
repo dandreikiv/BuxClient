@@ -14,6 +14,7 @@
 		858A90CA1F6AF07D001E544B /* WebSocketMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */; };
 		858A90CD1F6AF114001E544B /* ConnectionFailedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */; };
 		858A90CF1F6AF3A0001E544B /* TradingQouteMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */; };
+		8598F2391F6B35420010FB12 /* ProductDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductListViewController.m */; };
@@ -29,6 +30,7 @@
 		85E074E31F6B084E001AD780 /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074E21F6B084E001AD780 /* ProductListCell.m */; };
 		85E074E91F6B1156001AD780 /* ProductListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074E81F6B1156001AD780 /* ProductListSectionHeaderView.m */; };
 		85E074EC1F6B1548001AD780 /* ProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074EB1F6B1548001AD780 /* ProductDetailsViewController.m */; };
+		85E07B041F6B248B00BBA715 /* MarketClosedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E07B031F6B248B00BBA715 /* MarketClosedView.m */; };
 		85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */; };
 		85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */; };
 		85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
@@ -53,7 +55,7 @@
 		8526BD151F6A8F3000D8BB76 /* WebSocketMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketMessage.h; sourceTree = "<group>"; };
 		8526BD161F6A8F3000D8BB76 /* WebSocketMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessage.m; sourceTree = "<group>"; };
 		8526BD181F6A8F5200D8BB76 /* WebSocketMessageType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketMessageType.h; sourceTree = "<group>"; };
-		8544C7F41F6A8C5700930435 /* WebSocketDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketDelegate.h; sourceTree = "<group>"; };
+		8544C7F41F6A8C5700930435 /* WebSocketManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManagerDelegate.h; sourceTree = "<group>"; };
 		858A90C31F6AC35E001E544B /* WebSocketErrorMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketErrorMessage.h; sourceTree = "<group>"; };
 		858A90C41F6AC35E001E544B /* WebSocketErrorMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketErrorMessage.m; sourceTree = "<group>"; };
 		858A90C61F6AC379001E544B /* WebSocketQuoteMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketQuoteMessage.h; sourceTree = "<group>"; };
@@ -62,6 +64,9 @@
 		858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConnectionFailedMessage.json; sourceTree = "<group>"; };
 		858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TradingQouteMessage.json; sourceTree = "<group>"; };
 		858A90D01F6AF817001E544B /* DataCoordinatorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCoordinatorOutput.h; sourceTree = "<group>"; };
+		8598F2361F6B33E10010FB12 /* WebsocketStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebsocketStatus.h; sourceTree = "<group>"; };
+		8598F2371F6B35420010FB12 /* ProductDetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewModel.h; sourceTree = "<group>"; };
+		8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewModel.m; sourceTree = "<group>"; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +97,8 @@
 		85E074EA1F6B1548001AD780 /* ProductDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewController.h; sourceTree = "<group>"; };
 		85E074EB1F6B1548001AD780 /* ProductDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewController.m; sourceTree = "<group>"; };
 		85E07AFA1F6B16A100BBA715 /* ProductListControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListControllerDelegate.h; sourceTree = "<group>"; };
+		85E07B021F6B248B00BBA715 /* MarketClosedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarketClosedView.h; sourceTree = "<group>"; };
+		85E07B031F6B248B00BBA715 /* MarketClosedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarketClosedView.m; sourceTree = "<group>"; };
 		85EA731B1F6A6A4900069B41 /* ConnectionConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectionConfiguration.h; sourceTree = "<group>"; };
 		85EA731C1F6A6A4900069B41 /* ConnectionConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectionConfiguration.m; sourceTree = "<group>"; };
 		85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilder.h; sourceTree = "<group>"; };
@@ -129,7 +136,7 @@
 			children = (
 				85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */,
 				85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */,
-				8544C7F41F6A8C5700930435 /* WebSocketDelegate.h */,
+				8544C7F41F6A8C5700930435 /* WebSocketManagerDelegate.h */,
 				8526BD151F6A8F3000D8BB76 /* WebSocketMessage.h */,
 				8526BD161F6A8F3000D8BB76 /* WebSocketMessage.m */,
 				858A90C31F6AC35E001E544B /* WebSocketErrorMessage.h */,
@@ -137,6 +144,7 @@
 				858A90C61F6AC379001E544B /* WebSocketQuoteMessage.h */,
 				858A90C71F6AC379001E544B /* WebSocketQuoteMessage.m */,
 				8526BD181F6A8F5200D8BB76 /* WebSocketMessageType.h */,
+				8598F2361F6B33E10010FB12 /* WebsocketStatus.h */,
 			);
 			path = WebSocket;
 			sourceTree = "<group>";
@@ -240,6 +248,8 @@
 			children = (
 				85E074DA1F6AFD60001AD780 /* ProductListViewModel.h */,
 				85E074DB1F6AFD60001AD780 /* ProductListViewModel.m */,
+				8598F2371F6B35420010FB12 /* ProductDetailsViewModel.h */,
+				8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -272,10 +282,20 @@
 		85E074EE1F6B1577001AD780 /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
+				85E07AFE1F6B234F00BBA715 /* Views */,
 				85E074EA1F6B1548001AD780 /* ProductDetailsViewController.h */,
 				85E074EB1F6B1548001AD780 /* ProductDetailsViewController.m */,
 			);
 			path = "Product Details";
+			sourceTree = "<group>";
+		};
+		85E07AFE1F6B234F00BBA715 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E07B021F6B248B00BBA715 /* MarketClosedView.h */,
+				85E07B031F6B248B00BBA715 /* MarketClosedView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		85EA73281F6A873900069B41 /* Data Coordinator */ = {
@@ -478,7 +498,9 @@
 				85E074E01F6B0275001AD780 /* ProductListController.m in Sources */,
 				85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */,
 				85A4BFF31F66F70300065E36 /* main.m in Sources */,
+				85E07B041F6B248B00BBA715 /* MarketClosedView.m in Sources */,
 				85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */,
+				8598F2391F6B35420010FB12 /* ProductDetailsViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

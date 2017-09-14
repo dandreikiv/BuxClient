@@ -10,12 +10,12 @@
 
 @class Product;
 
-@protocol WebSocketDelegate;
+@protocol WebSocketManagerDelegate;
 @protocol RequestBuilderProtocol;
 
 @interface WebSocketManager : NSObject
 
-@property (nonatomic, weak) id <WebSocketDelegate> delegate;
+@property (nonatomic, weak) id <WebSocketManagerDelegate> delegate;
 
 - (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder;
 

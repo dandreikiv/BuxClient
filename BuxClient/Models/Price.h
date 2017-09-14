@@ -16,4 +16,6 @@
 
 - (nullable instancetype)initWithPriceDictionary:(nullable NSDictionary *)dictionary;
 
+- (void)updateAmount:(NSNumber *)amount;
+
 @end
