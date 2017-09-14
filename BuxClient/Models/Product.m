@@ -16,6 +16,9 @@ static NSString *const kClosingPrice = @"closingPrice";
 static NSString *const kProductId = @"securityId";
 static NSString *const kCategory = @"category";
 static NSString *const kQuoteCurrency = @"quoteCurrency";
+static NSString *const kProductMarketStatus = @"productMarketStatus";
+static NSString *const kMarkenOpen = @"OPEN";
+static NSString *const kDisplayDecimals = @"displayDecimals";
 
 @interface Product()
 
@@ -27,6 +30,8 @@ static NSString *const kQuoteCurrency = @"quoteCurrency";
 @property (nonatomic, copy) NSString *quoteCurrency;
 @property (nonatomic, strong) Price *currentPrice;
 @property (nonatomic, strong) Price *closingPrice;
+@property (nonatomic, assign) BOOL marketOpen;
+@property (nonatomic, assign) NSUInteger displayDecimals;
 
 @end
 
@@ -39,6 +44,8 @@ static NSString *const kQuoteCurrency = @"quoteCurrency";
 		self.displayName = dictionary[kDisplayName];
 		self.productId = dictionary[kProductId];
 		self.category = dictionary[kCategory];
+		self.marketOpen = [kMarkenOpen isEqualToString:dictionary[kProductMarketStatus]];
+		self.displayDecimals = [dictionary[kDisplayDecimals] unsignedIntegerValue];
 		
 		self.currentPrice = [[Price alloc] initWithPriceDictionary:dictionary[kCurrentPrice]];
 		self.closingPrice = [[Price alloc] initWithPriceDictionary:dictionary[kClosingPrice]];

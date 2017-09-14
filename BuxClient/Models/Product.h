@@ -19,6 +19,8 @@
 @property (nonatomic, copy, readonly, nullable) NSString *quoteCurrency;
 @property (nonatomic, strong, readonly, nullable) Price *currentPrice;
 @property (nonatomic, strong, readonly, nullable) Price *closingPrice;
+@property (nonatomic, assign, readonly) BOOL marketOpen;
+@property (nonatomic, assign, readonly) NSUInteger displayDecimals;
 
 - (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
