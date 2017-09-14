@@ -33,7 +33,7 @@ static NSString *const kQuoteCurrency = @"quoteCurrency";
 
 @implementation Product
 
-- (instancetype)initWithProductDictionary:(NSDictionary *)dictionary {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
 	if (self) {
 		self.symbol = dictionary[kSymbol];
@@ -50,10 +50,6 @@ static NSString *const kQuoteCurrency = @"quoteCurrency";
 
 - (NSString *)description {
 	return [NSString stringWithFormat:@"%@: %@", self.displayName, self.productId];
-}
-
-- (void)updateCurrentPriceWithAmount:(NSNumber *)amount {
-	[self.currentPrice updateAmount:amount];
 }
 
 - (BOOL)isEqual:(Product *)object {

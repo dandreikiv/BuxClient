@@ -21,8 +21,6 @@
 @property (nonatomic, strong, readonly, nullable) Price *currentPrice;
 @property (nonatomic, strong, readonly, nullable) Price *closingPrice;
 
-- (nullable instancetype)initWithProductDictionary:(nonnull NSDictionary *)dictionary;
-
-- (void)updateCurrentPriceWithAmount:(nonnull NSNumber *)amount;
+- (nullable instancetype)initWithDictionary:(nonnull NSDictionary *)dictionary;
 
 @end

@@ -32,8 +32,4 @@ static NSString *const kDecimals = @"decimals";
 	return self;
 }
 
-- (void)updateAmount:(NSNumber *)amount {
-	self.amount = amount;
-}
-
 @end
