@@ -8,6 +8,7 @@
 
 #import "RequestBuilder.h"
 #import "ConnectionConfiguration.h"
+#import "Product.h"
 
 static NSString *const kProductsPath = @"core/16/products/";
 
@@ -31,6 +32,19 @@ static NSString *const kProductsPath = @"core/16/products/";
 	NSURL *url = [NSURL URLWithString:kProductsPath relativeToURL:self.configuration.baseURL];
 	return [self requestWithURL:url];
 }
+
+- (NSURLRequest *)productDetailsRequestWithProduct:(Product *)product {
+	NSString *prouductDetailsQuery = [kProductsPath stringByAppendingPathComponent:product.productId];
+	NSURL *url = [NSURL URLWithString:prouductDetailsQuery relativeToURL:self.configuration.baseURL];
+	return [self requestWithURL:url];
+}
+
+- (NSURLRequest *)webSocketRequest {
+	NSURL *url = self.configuration.webSocketURL;
+	return [self requestWithURL:url];
+}
+
+#pragma mark - Private -
 
 - (NSURLRequest *)requestWithURL:(NSURL *)url {
 	NSParameterAssert(url);
