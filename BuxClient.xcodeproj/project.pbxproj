@@ -14,6 +14,7 @@
 		858A90CA1F6AF07D001E544B /* WebSocketMessageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */; };
 		858A90CD1F6AF114001E544B /* ConnectionFailedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */; };
 		858A90CF1F6AF3A0001E544B /* TradingQouteMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */; };
+		858A90D31F6AF8B8001E544B /* ProductListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 858A90D21F6AF8B8001E544B /* ProductListViewModel.m */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductsListViewController.m */; };
@@ -56,6 +57,9 @@
 		858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessageTests.m; sourceTree = "<group>"; };
 		858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConnectionFailedMessage.json; sourceTree = "<group>"; };
 		858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TradingQouteMessage.json; sourceTree = "<group>"; };
+		858A90D01F6AF817001E544B /* DataCoordinatorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCoordinatorOutput.h; sourceTree = "<group>"; };
+		858A90D11F6AF8B8001E544B /* ProductListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListViewModel.h; sourceTree = "<group>"; };
+		858A90D21F6AF8B8001E544B /* ProductListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListViewModel.m; sourceTree = "<group>"; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				85A4BFFF1F66F70300065E36 /* LaunchScreen.storyboard */,
 				85A4C0021F66F70300065E36 /* Info.plist */,
 				85A4BFF11F66F70300065E36 /* Supporting Files */,
+				858A90D11F6AF8B8001E544B /* ProductListViewModel.h */,
+				858A90D21F6AF8B8001E544B /* ProductListViewModel.m */,
 			);
 			path = BuxClient;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 			children = (
 				85EA73251F6A872D00069B41 /* DataCoordinator.h */,
 				85EA73261F6A872D00069B41 /* DataCoordinator.m */,
+				858A90D01F6AF817001E544B /* DataCoordinatorOutput.h */,
 			);
 			path = "Data Coordinator";
 			sourceTree = "<group>";
@@ -400,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858A90D31F6AF8B8001E544B /* ProductListViewModel.m in Sources */,
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */,
 				858A90C51F6AC35E001E544B /* WebSocketErrorMessage.m in Sources */,
