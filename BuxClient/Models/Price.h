@@ -10,11 +10,11 @@
 
 @interface Price : NSObject
 
-@property (nonatomic, strong, readonly) NSNumber *amount;
-@property (nonatomic, copy, readonly) NSString *currency;
+@property (nonatomic, copy, readonly, nullable) NSString *currency;
+@property (nonatomic, strong, readonly, nullable) NSNumber *amount;
 @property (nonatomic, assign, readonly) NSUInteger decimals;
 
-- (instancetype)initWithPriceDictionary:(NSDictionary *)dictionary;
-- (void)updateAmount:(NSNumber *)amount;
+- (nullable instancetype)initWithPriceDictionary:(nullable NSDictionary *)dictionary;
+- (void)updateAmount:(nonnull NSNumber *)amount;
 
 @end

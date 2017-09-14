@@ -10,8 +10,8 @@
 
 @interface ConnectionConfiguration : NSObject
 
-@property (nonatomic, strong, readonly, nonnull) NSURL *baseURL;
-@property (nonatomic, strong, readonly, nonnull) NSURL *webSocketURL;
-@property (nonatomic, copy, readonly, nonnull) NSString *authorizationToken;
+@property (nonatomic, strong, readonly, nullable) NSURL *baseURL;
+@property (nonatomic, strong, readonly, nullable) NSURL *webSocketURL;
+@property (nonatomic, copy, readonly, nullable) NSString *authorizationToken;
 
 @end
