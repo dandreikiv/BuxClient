@@ -21,6 +21,8 @@
 - (nullable instancetype)initWithRequestBuilder:(nonnull id <RequestBuilderProtocol>)requestBuilder
 									dataStorage:(nonnull id <DataStorageProtocol>)dataStorage;
 
+- (void)requestWebSocketState;
+
 - (void)retrieveDetailsWithProduct:(nonnull Product *)product;
 
 - (void)subscribeToProduct:(nonnull Product *)product;

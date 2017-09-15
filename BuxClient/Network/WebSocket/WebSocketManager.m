@@ -18,6 +18,8 @@
 @interface WebSocketManager() <SRWebSocketDelegate>
 
 @property (nonatomic, strong) SRWebSocket *socket;
+@property (nonatomic, assign) WebsocketStatus webSocketStatus;
+@property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
 
 @end
 
@@ -26,28 +28,35 @@
 - (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder {
 	self = [super init];
 	if (self) {
-		self.socket = [[SRWebSocket alloc] initWithURLRequest:requestBuilder.webSocketRequest];
-		self.socket.delegate = self;
-		
-		[self.socket open];
+		self.requestBuilder = requestBuilder;
+		[self connectWebSocket];
 	}
 	return self;
 }
 
+- (void)connectWebSocket {
+	self.webSocketStatus = WebsocketStatusDisconnected;
+	self.socket.delegate = nil;
+	self.socket = nil;
+	
+	SRWebSocket *webSocket = [[SRWebSocket alloc] initWithURLRequest:self.requestBuilder.webSocketRequest];
+	webSocket.delegate = self;
+	[webSocket open];
+}
+
 - (void)openSocket {
 	self.socket.delegate = self;
-	self.socket.open;
+	[self.socket open];
 }
 
 - (void)closeSocket {
 	self.socket.delegate = nil;
-	self.socket.close;
+	[self.socket close];
 }
 
 #pragma mark - SRWebSocketDelegate -
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
-	NSLog(@"message:%@", message);
 	NSDictionary *messageDictionary = [self messageDictionaryFromString:message];
 	WebSocketMessage *parsedMessage = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
 	
@@ -68,6 +77,7 @@
 		}
 			
 		case WebSocketMessageTypeConnected:
+			self.webSocketStatus = WebsocketStatusConnected;
 			[self delegateConnectedSuccesfully];
 			break;
 			
@@ -76,12 +86,26 @@
 	}
 }
 
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket {
+	self.socket = webSocket;
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
+	[self connectWebSocket];
+}
+
 - (void)subscribeToProuduct:(Product *)product {
-	[self.socket send:[self subscribeDataWithProduct:product]];
+	[self sendData:[self subscribeDataWithProduct:product]];
 }
 
 - (void)unsubscribeFromProduct:(Product *)product {
-	[self.socket send:[self unsubscribeDataWithProduct:product]];
+	[self sendData:[self unsubscribeDataWithProduct:product]];
+}
+
+- (void)sendData:(NSData *)data {
+	if (self.webSocketStatus == WebsocketStatusConnected) {
+		[self.socket send:data];
+	}
 }
 
 - (NSData *)subscribeDataWithProduct:(Product *)product {

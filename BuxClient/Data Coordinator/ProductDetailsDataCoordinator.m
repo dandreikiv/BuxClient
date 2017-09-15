@@ -22,6 +22,7 @@
 @property (nonatomic, strong) id <DataStorageProtocol> dataStorage;
 @property (nonatomic, strong) WebSocketManager *webSocketManager;
 @property (nonatomic, strong) NetworkManager *networkManager;
+@property (nonatomic, strong) Product *productToSubscribe;
 
 @end
 
@@ -70,26 +71,28 @@
 }
 
 - (void)subscribeToProduct:(Product *)product {
-	[self.webSocketManager subscribeToProuduct:product];
+	if (self.webSocketManager.webSocketStatus == WebsocketStatusConnected) {
+		[self.webSocketManager subscribeToProuduct:product];
+		self.productToSubscribe = nil;
+	}
+	else {
+		self.productToSubscribe = product;
+	}
 }
 
 - (void)unsubscribeFromProduct:(Product *)product {
 	[self.webSocketManager unsubscribeFromProduct:product];
 }
 
-#pragma mark - WebSocketManagerDelegate - 
-
-- (void)didConnect {
-	if ([self.productDetailsOutput respondsToSelector:@selector(webSocketDidConnect)]) {
+- (void)requestWebSocketState {
+	if ([self.productDetailsOutput respondsToSelector:@selector(updateWithWebSocketStatus:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.productDetailsOutput webSocketDidConnect];
+			[self.productDetailsOutput updateWithWebSocketStatus:self.webSocketManager.webSocketStatus];
 		});
 	}
 }
 
-- (void)didFailedToConnectWithError:(NSError *)error {
-	
-}
+#pragma mark - WebSocketManagerDelegate -
 
 - (void)didGetQuoteAmount:(NSNumber *)amount forProductWithId:(NSString *)productId {
 	Product *product = [self.dataStorage productWithId:productId];
@@ -101,5 +104,16 @@
 		});
 	}
 }
+
+- (void)didConnect {
+	if (self.productToSubscribe) {
+		[self subscribeToProduct:self.productToSubscribe];
+	}
+}
+
+- (void)didFailedToConnectWithError:(NSError *)error {
+	
+}
+
 
 @end

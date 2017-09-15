@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WebsocketStatus.h"
 
 @class Product;
 
@@ -15,14 +16,15 @@
 
 @interface WebSocketManager : NSObject
 
-@property (nonatomic, weak) id <WebSocketManagerDelegate> delegate;
+@property (nonatomic, weak, nullable) id <WebSocketManagerDelegate> delegate;
+@property (nonatomic, assign, readonly) WebsocketStatus webSocketStatus;
 
-- (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder;
+- (nullable instancetype)initWithRequestBuilder:(nonnull id <RequestBuilderProtocol>)requestBuilder;
 
 - (void)openSocket;
 - (void)closeSocket;
 
-- (void)subscribeToProuduct:(Product *)product;
-- (void)unsubscribeFromProduct:(Product *)product;
+- (void)subscribeToProuduct:(nonnull Product *)product;
+- (void)unsubscribeFromProduct:(nonnull Product *)product;
 
 @end
