@@ -16,6 +16,8 @@
 #import "RequestBuilderProtocol.h"
 #import "Reachability.h"
 #import "ReachabilityObserver.h"
+#import "ReachabilityStatus.h"
+#import "BUXError.h"
 
 @interface ProductListDataCoordinator() <ReachabilityObserver>
 
@@ -47,7 +49,7 @@
 - (void)retrieveProducts {
 	[self.networkManager performRequest:[self.requestBuilder productsRequest] completion:^(NSData *data, NSError *error) {
 		if (error) {
-			[self presentRetrieveProductsError:error];
+			[self presentError:error];
 		}
 		else {
 			[self storeReceivedProductsAndUpdateList:data];
@@ -55,34 +57,55 @@
 	}];
 }
 
-- (void)presentRetrieveProductsError:(NSError *)error {
-	if ([self.coordinatorOutput respondsToSelector:@selector(presentRetrieveProductsError:)]) {
+- (void)presentError:(NSError *)error {
+	if ([self.coordinatorOutput respondsToSelector:@selector(presentError:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.coordinatorOutput presentRetrieveProductsError:error];
+			[self.coordinatorOutput presentError:error];
 		});
 	}
 }
 
 - (void)storeReceivedProductsAndUpdateList:(NSData *)data {
-	NSArray *productsCollection = [NSJSONSerialization JSONObjectWithData:data
-																  options:NSJSONReadingMutableContainers
-																	error:NULL];
-	for (NSDictionary *productDictionary in productsCollection) {
-		Product *product = [[Product alloc] initWithDictionary:productDictionary];
-		[self.dataStorage storeProduct:product];
+	id json = [NSJSONSerialization JSONObjectWithData:data
+											  options:NSJSONReadingMutableContainers
+												error:NULL];
+	
+	NSError *error = [self errorFromJSON:json];
+	if (error) {
+		[self presentError:error];
+	}
+	else {
+		for (NSDictionary *productDictionary in json) {
+			Product *product = [[Product alloc] initWithDictionary:productDictionary];
+			[self.dataStorage storeProduct:product];
+		}
+		
+		if ([self.coordinatorOutput respondsToSelector:@selector(updateListWithProducts:)]) {
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[self.coordinatorOutput updateListWithProducts:self.dataStorage.allProducts];
+			});
+		}
+	}
+}
+
+- (NSError *)errorFromJSON:(id)json {
+	NSError *error = nil;
+	if ([json isKindOfClass:[NSDictionary class]]) {
+		NSDictionary *dictionary = (NSDictionary *)json;
+		error = [BUXError errorWithErrorCode:dictionary[@"errorCode"]];
 	}
 	
-	if ([self.coordinatorOutput respondsToSelector:@selector(updateListWithProducts:)]) {
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.coordinatorOutput updateListWithProducts:self.dataStorage.allProducts];
-		});
-	}
+	return error;
 }
 
 #pragma mark - ReachabilityObserver -
 
 - (void)networkReachabilityStatusChanged:(Reachability *)reachability {
-	NSLog(@"networkReachabilityStatusChanged");
+	if (reachability.connectionAvailable == NO) {
+		[self presentError:[NSError errorWithDomain:@""
+											   code:0
+										   userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(@"Network connection issue", nil)}]];
+	}
 }
 
 @end

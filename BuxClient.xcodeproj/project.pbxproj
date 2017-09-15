@@ -26,6 +26,7 @@
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
 		85D6FF721F6BEAE200B0923C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D6FF711F6BEADD00B0923C /* Reachability.m */; };
+		85D6FF761F6C15D400B0923C /* BUXError.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D6FF751F6C15D400B0923C /* BUXError.m */; };
 		85E074DC1F6AFD60001AD780 /* ProductListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074DB1F6AFD60001AD780 /* ProductListViewModel.m */; };
 		85E074E01F6B0275001AD780 /* ProductListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074DF1F6B0275001AD780 /* ProductListController.m */; };
 		85E074E31F6B084E001AD780 /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074E21F6B084E001AD780 /* ProductListCell.m */; };
@@ -95,6 +96,9 @@
 		85CDDC3C1F66F93100395B6D /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		85D6FF701F6BEADD00B0923C /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		85D6FF711F6BEADD00B0923C /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		85D6FF741F6C15D400B0923C /* BUXError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BUXError.h; sourceTree = "<group>"; };
+		85D6FF751F6C15D400B0923C /* BUXError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BUXError.m; sourceTree = "<group>"; };
+		85D6FF771F6C167000B0923C /* BUXErrorCodes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BUXErrorCodes.h; sourceTree = "<group>"; };
 		85E074DA1F6AFD60001AD780 /* ProductListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewModel.h; sourceTree = "<group>"; };
 		85E074DB1F6AFD60001AD780 /* ProductListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewModel.m; sourceTree = "<group>"; };
 		85E074DE1F6B0275001AD780 /* ProductListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListController.h; sourceTree = "<group>"; };
@@ -259,6 +263,9 @@
 				85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */,
 				85EA731E1F6A6C1C00069B41 /* RequestBuilder.h */,
 				85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */,
+				85D6FF741F6C15D400B0923C /* BUXError.h */,
+				85D6FF751F6C15D400B0923C /* BUXError.m */,
+				85D6FF771F6C167000B0923C /* BUXErrorCodes.h */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -528,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85D6FF761F6C15D400B0923C /* BUXError.m in Sources */,
 				85E074DC1F6AFD60001AD780 /* ProductListViewModel.m in Sources */,
 				85F217571F6BDDB700CDF51C /* WebSocketStatusViewModel.m in Sources */,
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,

@@ -66,7 +66,7 @@
 	[self.productsList reloadData];
 }
 
-- (void)presentRetrieveProductsError:(NSError *)error {
+- (void)presentError:(NSError *)error {
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Bux Client", nil)
 																   message:error.localizedDescription
 															preferredStyle:UIAlertControllerStyleAlert];

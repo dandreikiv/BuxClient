@@ -270,5 +270,10 @@ void notifyAboutStateChange(Reachability *reachability) {
 	return returnValue;
 }
 
+- (BOOL)connectionAvailable {
+	return ([self currentReachabilityStatus] == ReachableViaWiFi ||
+			[self currentReachabilityStatus] == ReachableViaWWAN);
+}
+
 
 @end

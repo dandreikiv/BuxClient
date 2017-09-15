@@ -13,7 +13,7 @@
 - (void)updateListWithProducts:(NSArray <Product *> *)products;
 
 @optional
-- (void)presentRetrieveProductsError:(NSError *)error;
+- (void)presentError:(NSError *)error;
 
 @end
 
