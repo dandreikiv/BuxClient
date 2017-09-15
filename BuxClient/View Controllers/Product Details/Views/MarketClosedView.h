@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class Product;
-
 @interface MarketClosedView : UIView
-
-@property (nonatomic, strong) Product *product;
 
 @end

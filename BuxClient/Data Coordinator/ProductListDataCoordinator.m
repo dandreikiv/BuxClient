@@ -50,9 +50,9 @@
 }
 
 - (void)presentRetrieveProductsError:(NSError *)error {
-	if ([self.productListOutput respondsToSelector:@selector(presentRetrieveProductsError:)]) {
+	if ([self.coordinatorOutput respondsToSelector:@selector(presentRetrieveProductsError:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.productListOutput presentRetrieveProductsError:error];
+			[self.coordinatorOutput presentRetrieveProductsError:error];
 		});
 	}
 }
@@ -66,9 +66,9 @@
 		[self.dataStorage storeProduct:product];
 	}
 	
-	if ([self.productListOutput respondsToSelector:@selector(updateListWithProducts:)]) {
+	if ([self.coordinatorOutput respondsToSelector:@selector(updateListWithProducts:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.productListOutput updateListWithProducts:self.dataStorage.allProducts];
+			[self.coordinatorOutput updateListWithProducts:self.dataStorage.allProducts];
 		});
 	}
 }

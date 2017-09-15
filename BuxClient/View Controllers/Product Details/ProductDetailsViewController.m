@@ -13,6 +13,7 @@
 #import "Product.h"
 #import "Price.h"
 #import "MarketClosedView.h"
+#import "WebSocketStatusViewModel.h"
 
 @interface ProductDetailsViewController () <ProductDetailsDataCoordinatorOutput>
 
@@ -31,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self setupUI];
+	[self.dataCoordinator requestWebSocketState];
 }
 
 - (void)setupUI {
@@ -71,6 +73,17 @@
 	self.priceChange.translatesAutoresizingMaskIntoConstraints = NO;
 	[self.priceChange.topAnchor constraintEqualToAnchor:self.currentPrice.bottomAnchor constant:10.0f].active = YES;
 	[self.priceChange.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+	
+	
+	self.socketStatus = [UILabel new];
+	self.socketStatus.font = [UIFont fontWithName:@"Courier-Bold" size:14.0];
+	self.socketStatus.textColor = [UIColor blackColor];
+	self.socketStatus.textAlignment = NSTextAlignmentCenter;
+	[self.view addSubview:self.socketStatus];
+	
+	self.socketStatus.translatesAutoresizingMaskIntoConstraints = NO;
+	[self.socketStatus.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor constant:-10.0f].active = YES;
+	[self.socketStatus.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -87,7 +100,7 @@
 	[super viewWillDisappear:animated];
 	
 	[self.dataCoordinator unsubscribeFromProduct:self.product];
-	self.dataCoordinator.productDetailsOutput = nil;
+	self.dataCoordinator.coordinatorOutput = nil;
 }
 
 - (void)dealloc {
@@ -100,7 +113,6 @@
 }
 
 - (void)presentMarketClosedView {
-	self.marketClosedView.product = self.product;
 	self.marketClosedView.translatesAutoresizingMaskIntoConstraints = NO;
 	[self.view addSubview:self.marketClosedView];
 	
@@ -129,8 +141,21 @@
 	self.priceChange.text = self.viewModel.priceChange;
 }
 
-- (void)webSocketDidConnect {
-	[self.dataCoordinator subscribeToProduct:self.product];
+- (void)updateWithWebSocketStatus:(WebSocketStatusViewModel *)viewModel {
+	self.socketStatus.text = viewModel.statusString;
+	self.socketStatus.textColor = viewModel.statusColor;
+}
+
+- (void)presentErorr:(NSError *)error {
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Bux Client", nil)
+																   message:error.localizedDescription
+															preferredStyle:UIAlertControllerStyleAlert];
+	
+	UIAlertAction *action = [UIAlertAction actionWithTitle:@"Ok"
+													 style:UIAlertActionStyleDefault
+												   handler:nil];
+	[alert addAction:action];
+	[self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

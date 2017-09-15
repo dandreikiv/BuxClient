@@ -39,6 +39,7 @@
 		85F2174E1F6B488900CDF51C /* ProductDetailsDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F2174D1F6B488900CDF51C /* ProductDetailsDataCoordinator.m */; };
 		85F217511F6B4D8000CDF51C /* InMemoryDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */; };
 		85F217531F6B4DAE00CDF51C /* DataStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F217521F6B4DAE00CDF51C /* DataStorageTests.m */; };
+		85F217571F6BDDB700CDF51C /* WebSocketStatusViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F217561F6BDDB700CDF51C /* WebSocketStatusViewModel.m */; };
 		85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +118,8 @@
 		85F2174F1F6B4AB600CDF51C /* ProductDetailsDataCoordinatorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsDataCoordinatorOutput.h; sourceTree = "<group>"; };
 		85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InMemoryDataStorage.m; sourceTree = "<group>"; };
 		85F217521F6B4DAE00CDF51C /* DataStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStorageTests.m; sourceTree = "<group>"; };
+		85F217551F6BDDB700CDF51C /* WebSocketStatusViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketStatusViewModel.h; sourceTree = "<group>"; };
+		85F217561F6BDDB700CDF51C /* WebSocketStatusViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketStatusViewModel.m; sourceTree = "<group>"; };
 		85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
 		A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +264,8 @@
 				85E074DB1F6AFD60001AD780 /* ProductListViewModel.m */,
 				8598F2371F6B35420010FB12 /* ProductDetailsViewModel.h */,
 				8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */,
+				85F217551F6BDDB700CDF51C /* WebSocketStatusViewModel.h */,
+				85F217561F6BDDB700CDF51C /* WebSocketStatusViewModel.m */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -507,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85E074DC1F6AFD60001AD780 /* ProductListViewModel.m in Sources */,
+				85F217571F6BDDB700CDF51C /* WebSocketStatusViewModel.m in Sources */,
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */,
 				85F217511F6B4D8000CDF51C /* InMemoryDataStorage.m in Sources */,

@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "WebsocketStatus.h"
 
+@class UIColor;
+
 @interface WebSocketStatusViewModel : NSObject
 
 @property (nonatomic, copy, readonly, nonnull) NSString *statusString;
+@property (nonatomic, strong, readonly, nonnull) UIColor *statusColor;
 
 - (nullable instancetype)initWithStatus:(WebsocketStatus)status;
 

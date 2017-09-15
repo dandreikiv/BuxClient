@@ -88,7 +88,7 @@
 	ProductDetailsDataCoordinator *coordinator = [[ProductDetailsDataCoordinator alloc] initWithRequestBuilder:requestBuilder
 																				   dataStorage:self.dataCoordinator.dataStorage];
 	controller.dataCoordinator = coordinator;
-	coordinator.productDetailsOutput = controller;
+	coordinator.coordinatorOutput = controller;
 	
 	[self.navigationController pushViewController:controller animated:YES];
 }

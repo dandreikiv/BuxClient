@@ -7,10 +7,12 @@
 //
 
 #import "WebSocketStatusViewModel.h"
+#import <UIKit/UIColor.h>
 
 @interface WebSocketStatusViewModel ()
 
 @property (nonatomic, copy) NSString *statusString;
+@property (nonatomic, strong) UIColor *statusColor;
 
 @end
 
@@ -23,6 +25,17 @@
 		NSString *disconnected = NSLocalizedString(@"Socket Disconnected", nil);
 		
 		self.statusString = (status == WebsocketStatusConnected) ? connected : disconnected;
+		
+		UIColor *connectedColor = [UIColor colorWithRed:87.0/255.0f
+												  green:201.0/255.0f
+												   blue:90.0f/255.0f
+												  alpha:1.0f];
+		
+		UIColor *disConnectedColor = [UIColor colorWithRed:244.0/255.0f
+														 green:113.0/255.0f
+														  blue:57.0f/255.0f
+														 alpha:1.0f];
+		self.statusColor = (status == WebsocketStatusConnected) ? connectedColor : disConnectedColor;
 	}
 	return self;
 }

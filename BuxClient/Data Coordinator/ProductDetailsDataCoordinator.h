@@ -16,7 +16,7 @@
 
 @interface ProductDetailsDataCoordinator : NSObject
 
-@property (nonatomic, weak, nullable) id <ProductDetailsDataCoordinatorOutput> productDetailsOutput;
+@property (nonatomic, weak, nullable) id <ProductDetailsDataCoordinatorOutput> coordinatorOutput;
 
 - (nullable instancetype)initWithRequestBuilder:(nonnull id <RequestBuilderProtocol>)requestBuilder
 									dataStorage:(nonnull id <DataStorageProtocol>)dataStorage;

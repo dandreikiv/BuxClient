@@ -9,10 +9,12 @@
 #import "WebsocketStatus.h"
 
 @class Product;
+@class WebSocketStatusViewModel;
 
 @protocol ProductDetailsDataCoordinatorOutput <NSObject>
 
-- (void)updateWithWebSocketStatus:(WebsocketStatus)status;
+- (void)presentErorr:(NSError *)error;
+- (void)updateWithWebSocketStatus:(WebSocketStatusViewModel *)status;
 - (void)updateWithProduct:(Product *)product;
 
 @end

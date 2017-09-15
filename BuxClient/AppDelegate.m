@@ -31,7 +31,7 @@
 	
 	ProductListViewController *productsListViewController = [ProductListViewController new];
 	productsListViewController.dataCoordinator = dataCoordinataor;
-	dataCoordinataor.productListOutput = productsListViewController; // weak property.
+	dataCoordinataor.coordinatorOutput = productsListViewController; // weak property.
 	
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:productsListViewController];
 	[self.window makeKeyAndVisible];

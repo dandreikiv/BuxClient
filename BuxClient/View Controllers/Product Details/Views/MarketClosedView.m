@@ -11,7 +11,6 @@
 
 @interface MarketClosedView()
 
-@property (nonatomic, strong) UILabel *title;
 @property (nonatomic, strong) UILabel *message;
 
 @end
@@ -35,17 +34,7 @@
 }
 
 - (void)setupUI {
-	self.backgroundColor = [UIColor whiteColor];
-	
-	self.title = [UILabel new];
-	self.title.font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:24.0];
-	self.title.textColor = [UIColor blackColor];
-	self.title.textAlignment = NSTextAlignmentCenter;
-	[self addSubview:self.title];
-	
-	self.title.translatesAutoresizingMaskIntoConstraints = NO;
-	[self.title.topAnchor constraintEqualToAnchor:self.topAnchor constant:120.0f].active = YES;
-	[self.title.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
+	self.backgroundColor = [UIColor colorWithWhite:0.7 alpha:0.5];
 	
 	self.message = [UILabel new];
 	self.message.font = [UIFont fontWithName:@"Courier-Bold" size:18.0];
@@ -55,13 +44,8 @@
 	[self addSubview:self.message];
 	
 	self.message.translatesAutoresizingMaskIntoConstraints = NO;
-	[self.message.topAnchor constraintEqualToAnchor:self.title.bottomAnchor constant:40.0f].active = YES;
 	[self.message.centerXAnchor constraintEqualToAnchor:self.centerXAnchor].active = YES;
-}
-
-- (void)setProduct:(Product *)product {
-	_product = product;
-	self.title.text = product.displayName;
+	[self.message.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
 }
 
 @end

@@ -54,9 +54,20 @@
 	[self.socket close];
 }
 
+- (void)setWebSocketStatus:(WebsocketStatus)webSocketStatus {
+	if (_webSocketStatus != webSocketStatus) {
+		_webSocketStatus = webSocketStatus;
+		if ([self.delegate respondsToSelector:@selector(webSocketStatusDidChange:)]) {
+			[self.delegate webSocketStatusDidChange:webSocketStatus];
+		}
+	}
+}
+
 #pragma mark - SRWebSocketDelegate -
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
+	NSLog(@"message:%@", message);
+	
 	NSDictionary *messageDictionary = [self messageDictionaryFromString:message];
 	WebSocketMessage *parsedMessage = [[WebSocketMessage alloc] initWithDictionary:messageDictionary];
 	

@@ -15,6 +15,7 @@
 #import "RequestBuilderProtocol.h"
 #import "WebSocketManager.h"
 #import "WebSocketManagerDelegate.h"
+#import "WebSocketStatusViewModel.h"
 
 @interface ProductDetailsDataCoordinator () <WebSocketManagerDelegate>
 
@@ -61,9 +62,9 @@
 																				error:NULL];
 			Product *details = [[Product alloc] initWithDictionary:productDictionary];
 			[self.dataStorage replaceProduct:product withProductWithId:product.productId];
-			if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
+			if ([self.coordinatorOutput respondsToSelector:@selector(updateWithProduct:)]) {
 				dispatch_async(dispatch_get_main_queue(), ^{
-					[self.productDetailsOutput updateWithProduct:details];
+					[self.coordinatorOutput updateWithProduct:details];
 				});
 			}
 		}
@@ -85,22 +86,31 @@
 }
 
 - (void)requestWebSocketState {
-	if ([self.productDetailsOutput respondsToSelector:@selector(updateWithWebSocketStatus:)]) {
+	[self dispatchWebSocketStatusChange:self.webSocketManager.webSocketStatus];
+}
+
+- (void)dispatchWebSocketStatusChange:(WebsocketStatus)status {
+	if ([self.coordinatorOutput respondsToSelector:@selector(updateWithWebSocketStatus:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.productDetailsOutput updateWithWebSocketStatus:self.webSocketManager.webSocketStatus];
+			WebSocketStatusViewModel *viewModel = [[WebSocketStatusViewModel alloc] initWithStatus:status];
+			[self.coordinatorOutput updateWithWebSocketStatus:viewModel];
 		});
 	}
 }
 
 #pragma mark - WebSocketManagerDelegate -
 
+- (void)webSocketStatusDidChange:(WebsocketStatus)status {
+	[self dispatchWebSocketStatusChange:status];
+}
+
 - (void)didGetQuoteAmount:(NSNumber *)amount forProductWithId:(NSString *)productId {
 	Product *product = [self.dataStorage productWithId:productId];
 	[product.currentPrice updateAmount:amount];
 	
-	if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
+	if ([self.coordinatorOutput respondsToSelector:@selector(updateWithProduct:)]) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self.productDetailsOutput updateWithProduct:product];
+			[self.coordinatorOutput updateWithProduct:product];
 		});
 	}
 }
@@ -112,7 +122,9 @@
 }
 
 - (void)didFailedToConnectWithError:(NSError *)error {
-	
+	if ([self.coordinatorOutput respondsToSelector:@selector(presentErorr:)]) {
+		[self.coordinatorOutput presentErorr:error];
+	}
 }
 
 
