@@ -25,6 +25,7 @@
 		85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC351F66F78700395B6D /* NetworkManager.m */; };
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
+		85D6FF721F6BEAE200B0923C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D6FF711F6BEADD00B0923C /* Reachability.m */; };
 		85E074DC1F6AFD60001AD780 /* ProductListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074DB1F6AFD60001AD780 /* ProductListViewModel.m */; };
 		85E074E01F6B0275001AD780 /* ProductListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074DF1F6B0275001AD780 /* ProductListController.m */; };
 		85E074E31F6B084E001AD780 /* ProductListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85E074E21F6B084E001AD780 /* ProductListCell.m */; };
@@ -92,6 +93,8 @@
 		85CDDC371F66F80900395B6D /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		85CDDC3B1F66F93100395B6D /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		85CDDC3C1F66F93100395B6D /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		85D6FF701F6BEADD00B0923C /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		85D6FF711F6BEADD00B0923C /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		85E074DA1F6AFD60001AD780 /* ProductListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListViewModel.h; sourceTree = "<group>"; };
 		85E074DB1F6AFD60001AD780 /* ProductListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListViewModel.m; sourceTree = "<group>"; };
 		85E074DE1F6B0275001AD780 /* ProductListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListController.h; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 		85F217521F6B4DAE00CDF51C /* DataStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStorageTests.m; sourceTree = "<group>"; };
 		85F217551F6BDDB700CDF51C /* WebSocketStatusViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketStatusViewModel.h; sourceTree = "<group>"; };
 		85F217561F6BDDB700CDF51C /* WebSocketStatusViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketStatusViewModel.m; sourceTree = "<group>"; };
+		85F2175B1F6BE7F700CDF51C /* ReachabilityObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReachabilityObserver.h; sourceTree = "<group>"; };
+		85F2175E1F6BE84200CDF51C /* ReachabilityStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReachabilityStatus.h; sourceTree = "<group>"; };
 		85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
 		A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +249,7 @@
 		85CDDC3F1F66F97500395B6D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				85F217581F6BE7C600CDF51C /* Reachability */,
 				8544C7F31F6A8C1A00930435 /* WebSocket */,
 				85CDDC341F66F78700395B6D /* NetworkManager.h */,
 				85CDDC351F66F78700395B6D /* NetworkManager.m */,
@@ -336,6 +342,17 @@
 				85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */,
 			);
 			path = "Data Storage";
+			sourceTree = "<group>";
+		};
+		85F217581F6BE7C600CDF51C /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				85D6FF701F6BEADD00B0923C /* Reachability.h */,
+				85D6FF711F6BEADD00B0923C /* Reachability.m */,
+				85F2175B1F6BE7F700CDF51C /* ReachabilityObserver.h */,
+				85F2175E1F6BE84200CDF51C /* ReachabilityStatus.h */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		C8DB743EC769D45A2B05E024 /* Frameworks */ = {
@@ -521,6 +538,7 @@
 				85E074E91F6B1156001AD780 /* ProductListSectionHeaderView.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ProductListViewController.m in Sources */,
 				85EA73271F6A872D00069B41 /* ProductListDataCoordinator.m in Sources */,
+				85D6FF721F6BEAE200B0923C /* Reachability.m in Sources */,
 				8526BD171F6A8F3000D8BB76 /* WebSocketMessage.m in Sources */,
 				85E074EC1F6B1548001AD780 /* ProductDetailsViewController.m in Sources */,
 				85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */,

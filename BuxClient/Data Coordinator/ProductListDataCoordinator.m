@@ -14,12 +14,15 @@
 #import "Price.h"
 #import "ProductListViewModel.h"
 #import "RequestBuilderProtocol.h"
+#import "Reachability.h"
+#import "ReachabilityObserver.h"
 
-@interface ProductListDataCoordinator()
+@interface ProductListDataCoordinator() <ReachabilityObserver>
 
 @property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
 @property (nonatomic, strong) id <DataStorageProtocol> dataStorage;
 @property (nonatomic, strong) NetworkManager *networkManager;
+@property (nonatomic, strong) Reachability *reachability;
 
 @end
 
@@ -34,6 +37,9 @@
 		self.dataStorage = dataStorage;
 		
 		self.networkManager = [NetworkManager new];
+		self.reachability = [Reachability reachabilityForInternetConnection];
+		[self.reachability addObserver:self];
+		[self.reachability startNotifier];
 	}
 	return self;
 }
@@ -71,6 +77,12 @@
 			[self.coordinatorOutput updateListWithProducts:self.dataStorage.allProducts];
 		});
 	}
+}
+
+#pragma mark - ReachabilityObserver -
+
+- (void)networkReachabilityStatusChanged:(Reachability *)reachability {
+	NSLog(@"networkReachabilityStatusChanged");
 }
 
 @end
