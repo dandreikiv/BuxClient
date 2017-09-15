@@ -44,6 +44,26 @@
 	NSLog(@"dealloc: %@", NSStringFromClass([self class]));
 }
 
+- (void)retrieveDetailsWithProduct:(Product *)product {
+	//	NSURLRequest *request = [self.requestBuilder productDetailsRequestWithProduct:product];
+	//	[self.networkManager performRequest:request completion:^(NSData *data, NSError *error) {
+	//		if (error) {
+	//			[self presentRetrieveProductsError:error];
+	//		}
+	//		else {
+	//			NSDictionary *productDictionary = [NSJSONSerialization JSONObjectWithData:data
+	//																			  options:NSJSONReadingMutableContainers
+	//																				error:NULL];
+	//			Product *details = [[Product alloc] initWithDictionary:productDictionary];
+	//			if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
+	//				dispatch_async(dispatch_get_main_queue(), ^{
+	//					[self.productDetailsOutput updateWithProduct:details];
+	//				});
+	//			}
+	//		}
+	//	}];
+}
+
 - (void)subscribeToProduct:(Product *)product {
 	[self.webSocketManager subscribeToProuduct:product];
 }

@@ -11,7 +11,6 @@
 @class Product;
 
 @protocol ProductListDataCoordinatorOutput;
-//@protocol ProductDetailsDataCoordinatorOutput;
 @protocol RequestBuilderProtocol;
 @protocol DataStorageProtocol;
 
@@ -19,15 +18,10 @@
 
 @property (nonatomic, strong, readonly, nullable) id <DataStorageProtocol> dataStorage;
 @property (nonatomic, weak, nullable) id <ProductListDataCoordinatorOutput> productListOutput;
-//@property (nonatomic, weak) id <ProductDetailsDataCoordinatorOutput> productDetailsOutput;
 
 - (nullable instancetype)initWithRequestBuilder:(nonnull id <RequestBuilderProtocol>)requestBuilder
 									dataStorage:(nonnull id <DataStorageProtocol>)dataStorage;
 
 - (void)retrieveProducts;
-- (void)retrieveDetailsWithProduct:(nonnull Product *)product;
-
-//- (void)subscribeToProduct:(Product *)product;
-//- (void)unsubscribeFromProduct:(Product *)product;
 
 @end
