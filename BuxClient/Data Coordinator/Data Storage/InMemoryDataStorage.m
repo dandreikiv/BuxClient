@@ -41,7 +41,7 @@
 	[self.products addObjectsFromArray:products];
 }
 
-- (void)replaceProduct:(Product *)product withProductWithId:(NSString *)productId {
+- (void)update:(Product *)product withId:(NSString *)productId {
 	Product *oldProduct = [self productWithId:productId];
 	[self.products removeObject:oldProduct];
 	[self.products addObject:product];

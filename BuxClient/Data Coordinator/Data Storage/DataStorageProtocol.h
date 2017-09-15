@@ -14,7 +14,7 @@
 
 - (void)storeProduct:(Product *)product;
 - (void)storeProducts:(NSArray <Product *> *)products;
-- (void)replaceProduct:(Product *)product withProductWithId:(NSString *)productId;
+- (void)update:(Product *)product withId:(NSString *)productId;
 
 - (Product *)productWithId:(NSString *)productId;
 - (NSArray <Product *> *)allProducts;

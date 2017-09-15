@@ -68,7 +68,7 @@
 																			  options:NSJSONReadingMutableContainers
 																				error:NULL];
 			Product *details = [[Product alloc] initWithDictionary:productDictionary];
-			[self.dataStorage replaceProduct:product withProductWithId:product.productId];
+			[self.dataStorage update:details withId:details.productId];
 			if ([self.coordinatorOutput respondsToSelector:@selector(updateWithProduct:)]) {
 				dispatch_async(dispatch_get_main_queue(), ^{
 					[self.coordinatorOutput updateWithProduct:details];
