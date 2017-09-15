@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
-#import "DataCoordinator.h"
+#import "ProductListDataCoordinator.h"
 #import "RequestBuilder.h"
 #import "ConnectionConfiguration.h"
 #import "ProductListViewController.h"
+#import "InMemoryDataStorage.h"
 
 @interface AppDelegate ()
 
@@ -25,8 +26,8 @@
 	
 	ConnectionConfiguration *configuration = [ConnectionConfiguration new];
 	RequestBuilder *requestBuilder = [[RequestBuilder alloc] initWithConfigurataion:configuration];
-	DataCoordinator *dataCoordinataor = [[DataCoordinator alloc] initWithRequsetBuilder:requestBuilder
-																			dataStorage:nil];
+	ProductListDataCoordinator *dataCoordinataor = [[ProductListDataCoordinator alloc] initWithRequestBuilder:requestBuilder
+																								  dataStorage:[InMemoryDataStorage new]];
 	
 	ProductListViewController *productsListViewController = [ProductListViewController new];
 	productsListViewController.dataCoordinator = dataCoordinataor;

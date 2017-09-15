@@ -19,6 +19,9 @@
 
 - (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder;
 
+- (void)openSocket;
+- (void)closeSocket;
+
 - (void)subscribeToProuduct:(Product *)product;
 - (void)unsubscribeFromProduct:(Product *)product;
 

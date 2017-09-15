@@ -45,7 +45,7 @@ static NSString *const kProductsPath = @"core/16/products/";
 
 - (void)testProductDetailsRequestProperURLAndAuthToken {
 	NSString *productID = @"Some_ID";
-	Product *product = [[Product alloc] initWithProductDictionary:@{@"securityId": productID}];
+	Product *product = [[Product alloc] initWithDictionary:@{@"securityId": productID}];
 	
 	NSString *productDetaisQuery = [kProductsPath stringByAppendingPathComponent:productID];
 	NSURL *url = [NSURL URLWithString:productDetaisQuery relativeToURL:self.configuration.baseURL];

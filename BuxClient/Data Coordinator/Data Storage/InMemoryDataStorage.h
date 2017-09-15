@@ -1,5 +1,5 @@
 //
-//  DataStorage.h
+//  InMemoryDataStorage.h
 //  BuxClient
 //
 //  Created by dmytro.andreikiv@philips.com on 15/09/2017.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "DataStorageProtocol.h"
 
-@interface DataStorage : NSObject <DataStorageProtocol>
+@interface InMemoryDataStorage : NSObject <DataStorageProtocol>
 
 @end

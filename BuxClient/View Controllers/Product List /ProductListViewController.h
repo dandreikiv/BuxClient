@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataCoordinatorOutput.h"
+#import "ProductListDataCoordinatorOutput.h"
 
-@class DataCoordinator;
+@class ProductListDataCoordinator;
 
-@interface ProductListViewController : UIViewController <DataCoordinatorProductListOutput>
+@interface ProductListViewController : UIViewController <ProductListDataCoordinatorOutput>
 
-@property (nonatomic, strong) DataCoordinator *dataCoordinator;
+@property (nonatomic, strong) ProductListDataCoordinator *dataCoordinator;
 
 @end
 

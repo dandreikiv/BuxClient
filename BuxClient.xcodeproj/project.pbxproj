@@ -15,7 +15,6 @@
 		858A90CD1F6AF114001E544B /* ConnectionFailedMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */; };
 		858A90CF1F6AF3A0001E544B /* TradingQouteMessage.json in Resources */ = {isa = PBXBuildFile; fileRef = 858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */; };
 		8598F2391F6B35420010FB12 /* ProductDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */; };
-		8598F23D1F6B47350010FB12 /* DataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8598F23C1F6B47350010FB12 /* DataStorage.m */; };
 		85A4BFF31F66F70300065E36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF21F66F70300065E36 /* main.m */; };
 		85A4BFF61F66F70300065E36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF51F66F70300065E36 /* AppDelegate.m */; };
 		85A4BFF91F66F70300065E36 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4BFF81F66F70300065E36 /* ProductListViewController.m */; };
@@ -36,7 +35,10 @@
 		85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */; };
 		85EA73221F6A6FBD00069B41 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */; };
-		85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73261F6A872D00069B41 /* DataCoordinator.m */; };
+		85EA73271F6A872D00069B41 /* ProductListDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85EA73261F6A872D00069B41 /* ProductListDataCoordinator.m */; };
+		85F2174E1F6B488900CDF51C /* ProductDetailsDataCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F2174D1F6B488900CDF51C /* ProductDetailsDataCoordinator.m */; };
+		85F217511F6B4D8000CDF51C /* InMemoryDataStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */; };
+		85F217531F6B4DAE00CDF51C /* DataStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F217521F6B4DAE00CDF51C /* DataStorageTests.m */; };
 		85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */; };
 /* End PBXBuildFile section */
 
@@ -64,13 +66,12 @@
 		858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketMessageTests.m; sourceTree = "<group>"; };
 		858A90CC1F6AF114001E544B /* ConnectionFailedMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ConnectionFailedMessage.json; sourceTree = "<group>"; };
 		858A90CE1F6AF3A0001E544B /* TradingQouteMessage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TradingQouteMessage.json; sourceTree = "<group>"; };
-		858A90D01F6AF817001E544B /* DataCoordinatorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCoordinatorOutput.h; sourceTree = "<group>"; };
+		858A90D01F6AF817001E544B /* ProductListDataCoordinatorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListDataCoordinatorOutput.h; sourceTree = "<group>"; };
 		8598F2361F6B33E10010FB12 /* WebsocketStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebsocketStatus.h; sourceTree = "<group>"; };
 		8598F2371F6B35420010FB12 /* ProductDetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsViewModel.h; sourceTree = "<group>"; };
 		8598F2381F6B35420010FB12 /* ProductDetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsViewModel.m; sourceTree = "<group>"; };
 		8598F23A1F6B45B00010FB12 /* DataStorageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStorageProtocol.h; sourceTree = "<group>"; };
-		8598F23B1F6B47350010FB12 /* DataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStorage.h; sourceTree = "<group>"; };
-		8598F23C1F6B47350010FB12 /* DataStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStorage.m; sourceTree = "<group>"; };
+		8598F23B1F6B47350010FB12 /* InMemoryDataStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InMemoryDataStorage.h; sourceTree = "<group>"; };
 		85A4BFEE1F66F70300065E36 /* BuxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A4BFF21F66F70300065E36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		85A4BFF41F66F70300065E36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,8 +110,13 @@
 		85EA731F1F6A6C1C00069B41 /* RequestBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilder.m; sourceTree = "<group>"; };
 		85EA73211F6A6CDD00069B41 /* RequestBuilderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBuilderProtocol.h; sourceTree = "<group>"; };
 		85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBuilderTests.m; sourceTree = "<group>"; };
-		85EA73251F6A872D00069B41 /* DataCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataCoordinator.h; sourceTree = "<group>"; };
-		85EA73261F6A872D00069B41 /* DataCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataCoordinator.m; sourceTree = "<group>"; };
+		85EA73251F6A872D00069B41 /* ProductListDataCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductListDataCoordinator.h; sourceTree = "<group>"; };
+		85EA73261F6A872D00069B41 /* ProductListDataCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductListDataCoordinator.m; sourceTree = "<group>"; };
+		85F2174C1F6B488900CDF51C /* ProductDetailsDataCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsDataCoordinator.h; sourceTree = "<group>"; };
+		85F2174D1F6B488900CDF51C /* ProductDetailsDataCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductDetailsDataCoordinator.m; sourceTree = "<group>"; };
+		85F2174F1F6B4AB600CDF51C /* ProductDetailsDataCoordinatorOutput.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductDetailsDataCoordinatorOutput.h; sourceTree = "<group>"; };
+		85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InMemoryDataStorage.m; sourceTree = "<group>"; };
+		85F217521F6B4DAE00CDF51C /* DataStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStorageTests.m; sourceTree = "<group>"; };
 		85F4E63C1F6A89D100F8C3CE /* WebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		85F4E63D1F6A89D100F8C3CE /* WebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
 		A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 				85A4C00B1F66F70300065E36 /* ConnectionConfigurationTests.m */,
 				85EA73231F6A7F8500069B41 /* RequestBuilderTests.m */,
 				858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */,
+				85F217521F6B4DAE00CDF51C /* DataStorageTests.m */,
 				85A4C00D1F66F70300065E36 /* Info.plist */,
 			);
 			path = BuxClientTests;
@@ -305,14 +312,25 @@
 		85EA73281F6A873900069B41 /* Data Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				85EA73251F6A872D00069B41 /* DataCoordinator.h */,
-				85EA73261F6A872D00069B41 /* DataCoordinator.m */,
-				858A90D01F6AF817001E544B /* DataCoordinatorOutput.h */,
-				8598F23A1F6B45B00010FB12 /* DataStorageProtocol.h */,
-				8598F23B1F6B47350010FB12 /* DataStorage.h */,
-				8598F23C1F6B47350010FB12 /* DataStorage.m */,
+				85EA73251F6A872D00069B41 /* ProductListDataCoordinator.h */,
+				85EA73261F6A872D00069B41 /* ProductListDataCoordinator.m */,
+				858A90D01F6AF817001E544B /* ProductListDataCoordinatorOutput.h */,
+				85F2174C1F6B488900CDF51C /* ProductDetailsDataCoordinator.h */,
+				85F2174D1F6B488900CDF51C /* ProductDetailsDataCoordinator.m */,
+				85F2174F1F6B4AB600CDF51C /* ProductDetailsDataCoordinatorOutput.h */,
+				85F217541F6B4F2B00CDF51C /* Data Storage */,
 			);
 			path = "Data Coordinator";
+			sourceTree = "<group>";
+		};
+		85F217541F6B4F2B00CDF51C /* Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				8598F23A1F6B45B00010FB12 /* DataStorageProtocol.h */,
+				8598F23B1F6B47350010FB12 /* InMemoryDataStorage.h */,
+				85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */,
+			);
+			path = "Data Storage";
 			sourceTree = "<group>";
 		};
 		C8DB743EC769D45A2B05E024 /* Frameworks */ = {
@@ -491,11 +509,12 @@
 				85E074DC1F6AFD60001AD780 /* ProductListViewModel.m in Sources */,
 				85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */,
 				85F4E63E1F6A89D100F8C3CE /* WebSocketManager.m in Sources */,
+				85F217511F6B4D8000CDF51C /* InMemoryDataStorage.m in Sources */,
 				858A90C51F6AC35E001E544B /* WebSocketErrorMessage.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
 				85E074E91F6B1156001AD780 /* ProductListSectionHeaderView.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ProductListViewController.m in Sources */,
-				85EA73271F6A872D00069B41 /* DataCoordinator.m in Sources */,
+				85EA73271F6A872D00069B41 /* ProductListDataCoordinator.m in Sources */,
 				8526BD171F6A8F3000D8BB76 /* WebSocketMessage.m in Sources */,
 				85E074EC1F6B1548001AD780 /* ProductDetailsViewController.m in Sources */,
 				85EA73201F6A6C1C00069B41 /* RequestBuilder.m in Sources */,
@@ -507,8 +526,8 @@
 				85A4BFF31F66F70300065E36 /* main.m in Sources */,
 				85E07B041F6B248B00BBA715 /* MarketClosedView.m in Sources */,
 				85EA731D1F6A6A4900069B41 /* ConnectionConfiguration.m in Sources */,
+				85F2174E1F6B488900CDF51C /* ProductDetailsDataCoordinator.m in Sources */,
 				8598F2391F6B35420010FB12 /* ProductDetailsViewModel.m in Sources */,
-				8598F23D1F6B47350010FB12 /* DataStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +538,7 @@
 				85A4C00C1F66F70300065E36 /* ConnectionConfigurationTests.m in Sources */,
 				85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */,
 				858A90CA1F6AF07D001E544B /* WebSocketMessageTests.m in Sources */,
+				85F217531F6B4DAE00CDF51C /* DataStorageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

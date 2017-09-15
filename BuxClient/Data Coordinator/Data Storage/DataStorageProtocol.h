@@ -10,9 +10,13 @@
 
 @protocol DataStorageProtocol <NSObject>
 
+@property (nonatomic, assign, readonly) NSUInteger count;
+
+- (void)storeProduct:(Product *)product;
 - (void)storeProducts:(NSArray <Product *> *)products;
 - (void)replaceProduct:(Product *)product withProductWithId:(NSString *)productId;
 
-- (Product *)findProductWithId:(NSString *)productId;
+- (Product *)productWithId:(NSString *)productId;
+- (NSArray <Product *> *)allProducts;
 
 @end

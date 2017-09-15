@@ -9,9 +9,12 @@
 #import "ProductListViewController.h"
 #import "ProductDetailsViewController.h"
 #import "Product.h"
-#import "DataCoordinator.h"
+#import "ProductListDataCoordinator.h"
 #import "ProductListController.h"
 #import "ProductListControllerDelegate.h"
+#import "ProductDetailsDataCoordinator.h"
+#import "RequestBuilder.h"
+#import "ConnectionConfiguration.h"
 
 @interface ProductListViewController () <ProductListControllerDelegate>
 
@@ -80,7 +83,13 @@
 - (void)presentDetailsForProduct:(Product *)product {
 	ProductDetailsViewController *controller = [ProductDetailsViewController new];
 	controller.product = product;
-	controller.dataCoordinator = self.dataCoordinator;
+	
+	RequestBuilder *requestBuilder = [[RequestBuilder alloc] initWithConfigurataion:[ConnectionConfiguration new]];
+	ProductDetailsDataCoordinator *coordinator = [[ProductDetailsDataCoordinator alloc] initWithRequestBuilder:requestBuilder
+																				   dataStorage:self.dataCoordinator.dataStorage];
+	controller.dataCoordinator = coordinator;
+	coordinator.productDetailsOutput = controller;
+	
 	[self.navigationController pushViewController:controller animated:YES];
 }
 

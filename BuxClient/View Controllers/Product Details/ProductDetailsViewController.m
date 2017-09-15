@@ -7,14 +7,14 @@
 //
 
 #import "ProductDetailsViewController.h"
+#import "ProductDetailsDataCoordinator.h"
+#import "ProductDetailsDataCoordinatorOutput.h"
+#import "ProductDetailsViewModel.h"
 #import "Product.h"
 #import "Price.h"
-#import "DataCoordinator.h"
-#import "DataCoordinatorOutput.h"
 #import "MarketClosedView.h"
-#import "ProductDetailsViewModel.h"
 
-@interface ProductDetailsViewController () <DataCoordinatorProductDetailsOutput>
+@interface ProductDetailsViewController () <ProductDetailsDataCoordinatorOutput>
 
 @property (nonatomic, strong) MarketClosedView *marketClosedView;
 @property (nonatomic, strong) UILabel *market;
@@ -77,17 +77,19 @@
 	[super viewWillAppear:animated];
 	
 	if (self.product.marketOpen == NO) {
-		[self presentMarkedClosedView];
+		[self presentMarketClosedView];
 	}
-	self.dataCoordinator.productDetailsOutput = self;
-	[self.dataCoordinator subscribeToProduct:self.product];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	
-	self.dataCoordinator.productDetailsOutput = nil;
 	[self.dataCoordinator unsubscribeFromProduct:self.product];
+	self.dataCoordinator.productDetailsOutput = nil;
+}
+
+- (void)dealloc {
+	NSLog(@"dealloc: %@", NSStringFromClass([self class]));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,7 +97,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)presentMarkedClosedView {
+- (void)presentMarketClosedView {
 	self.marketClosedView.product = self.product;
 	self.marketClosedView.translatesAutoresizingMaskIntoConstraints = NO;
 	[self.view addSubview:self.marketClosedView];
@@ -123,6 +125,10 @@
 	
 	self.currentPrice.text = self.viewModel.currentPrice;
 	self.priceChange.text = self.viewModel.priceChange;
+}
+
+- (void)webSocketDidConnect {
+	[self.dataCoordinator subscribeToProduct:self.product];
 }
 
 @end

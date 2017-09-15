@@ -34,6 +34,16 @@
 	return self;
 }
 
+- (void)openSocket {
+	self.socket.delegate = self;
+	self.socket.open;
+}
+
+- (void)closeSocket {
+	self.socket.delegate = nil;
+	self.socket.close;
+}
+
 #pragma mark - SRWebSocketDelegate -
 
 - (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message {
@@ -95,7 +105,7 @@
 }
 
 - (void)dealloc {
-	[self.socket close];
+	[self closeSocket];
 }
 
 #pragma mark - Private -
