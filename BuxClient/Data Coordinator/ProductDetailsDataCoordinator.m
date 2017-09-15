@@ -16,14 +16,18 @@
 #import "WebSocketManager.h"
 #import "WebSocketManagerDelegate.h"
 #import "WebSocketStatusViewModel.h"
+#import "Reachability.h"
+#import "BUXError.h"
+#import "ReachabilityObserver.h"
 
-@interface ProductDetailsDataCoordinator () <WebSocketManagerDelegate>
+@interface ProductDetailsDataCoordinator () <WebSocketManagerDelegate, ReachabilityObserver>
 
 @property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
 @property (nonatomic, strong) id <DataStorageProtocol> dataStorage;
 @property (nonatomic, strong) WebSocketManager *webSocketManager;
 @property (nonatomic, strong) NetworkManager *networkManager;
 @property (nonatomic, strong) Product *productToSubscribe;
+@property (nonatomic, strong) Reachability *reachability;
 
 @end
 
@@ -42,19 +46,22 @@
 		self.webSocketManager.delegate = self;
 		
 		self.networkManager = [NetworkManager new];
+		self.reachability = [Reachability reachabilityForInternetConnection];
+		[self.reachability addObserver:self];
+		[self.reachability startNotifier];
 	}
 	return self;
 }
 
 - (void)dealloc {
-	NSLog(@"dealloc: %@", NSStringFromClass([self class]));
+	[self.reachability removeObserver:self];
 }
 
 - (void)retrieveDetailsWithProduct:(Product *)product {
 	NSURLRequest *request = [self.requestBuilder productDetailsRequestWithProduct:product];
 	[self.networkManager performRequest:request completion:^(NSData *data, NSError *error) {
 		if (error) {
-//			[self presentRetrieveProductsError:error];
+			[self presentError:error];
 		}
 		else {
 			NSDictionary *productDictionary = [NSJSONSerialization JSONObjectWithData:data
@@ -71,10 +78,17 @@
 	}];
 }
 
+- (void)presentError:(NSError *)error {
+	if ([self.coordinatorOutput respondsToSelector:@selector(presentError:)]) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.coordinatorOutput presentError:error];
+		});
+	}
+}
+
 - (void)subscribeToProduct:(Product *)product {
 	if (self.webSocketManager.webSocketStatus == WebsocketStatusConnected) {
 		[self.webSocketManager subscribeToProuduct:product];
-		self.productToSubscribe = nil;
 	}
 	else {
 		self.productToSubscribe = product;
@@ -122,10 +136,17 @@
 }
 
 - (void)didFailedToConnectWithError:(NSError *)error {
-	if ([self.coordinatorOutput respondsToSelector:@selector(presentErorr:)]) {
-		[self.coordinatorOutput presentErorr:error];
+	if ([self.coordinatorOutput respondsToSelector:@selector(presentError:)]) {
+		[self.coordinatorOutput presentError:error];
 	}
 }
 
+- (void)networkReachabilityStatusChanged:(Reachability *)reachability {
+	if (reachability.connectionAvailable == NO) {
+		[self presentError:[BUXError reachabilityError]];
+	} else {
+		[self.webSocketManager openSocket];
+	}
+}
 
 @end

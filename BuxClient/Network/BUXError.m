@@ -55,9 +55,16 @@ static NSDictionary *errorsMap = nil;
 						   userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(@"Unexpected Error", nil)}];
 }
 
+
 + (NSError *)errorWithErrorCode:(NSString *)code {
 	NSError *(^createError)(void) = errorsMap[code];
 	return createError ? createError() : nil;
+}
+
++ (NSError *)reachabilityError {
+	return [NSError errorWithDomain:BUXClientDomainError
+							   code:ErrorCodeNetworkConnectionIssue
+						   userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(@"Network connection issue", nil)}];
 }
 
 @end

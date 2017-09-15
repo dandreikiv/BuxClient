@@ -20,7 +20,7 @@ extern NSString *kReachabilityChangedNotification;
 
 @interface Reachability : NSObject
 
-@property (nonatomic, strong, readonly) NSMutableSet *observers;
+@property (nonatomic, strong, readonly) NSMutableArray *observers;
 
 - (void)addObserver:(id <ReachabilityObserver>)observer;
 - (void)removeObserver:(id <ReachabilityObserver>)observer;

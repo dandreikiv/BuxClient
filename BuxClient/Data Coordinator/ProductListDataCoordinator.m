@@ -46,6 +46,10 @@
 	return self;
 }
 
+- (void)dealloc {
+	[self.reachability removeObserver:self];
+}
+
 - (void)retrieveProducts {
 	[self.networkManager performRequest:[self.requestBuilder productsRequest] completion:^(NSData *data, NSError *error) {
 		if (error) {
@@ -102,9 +106,11 @@
 
 - (void)networkReachabilityStatusChanged:(Reachability *)reachability {
 	if (reachability.connectionAvailable == NO) {
-		[self presentError:[NSError errorWithDomain:@""
-											   code:0
-										   userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(@"Network connection issue", nil)}]];
+		[self presentError:[BUXError reachabilityError]];
+	} else {
+		if ([self.dataStorage allProducts].count == 0) {
+			[self retrieveProducts];
+		}
 	}
 }
 

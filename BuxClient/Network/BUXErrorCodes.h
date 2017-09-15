@@ -11,5 +11,6 @@ typedef NS_ENUM (NSUInteger, ErrorCode) {
 	ErrorCodeNotSufficientPermissions = 14,
 	ErrorCodeAuthorizationHeaderMissing = 9,
 	ErrorCodeAuthorizationTokenExpired = 8,
-	ErrorCodeUnexpected
+	ErrorCodeUnexpected,
+	ErrorCodeNetworkConnectionIssue = 1111
 };

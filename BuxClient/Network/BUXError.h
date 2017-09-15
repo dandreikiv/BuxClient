@@ -12,6 +12,7 @@ FOUNDATION_EXPORT NSString *const BUXClientDomainError;
 
 @interface BUXError : NSObject
 
++ (NSError *)reachabilityError;
 + (NSError *)errorWithErrorCode:(NSString *)code;
 
 @end

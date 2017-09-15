@@ -13,7 +13,7 @@
 
 @protocol ProductDetailsDataCoordinatorOutput <NSObject>
 
-- (void)presentErorr:(NSError *)error;
+- (void)presentError:(NSError *)error;
 - (void)updateWithWebSocketStatus:(WebSocketStatusViewModel *)status;
 - (void)updateWithProduct:(Product *)product;
 

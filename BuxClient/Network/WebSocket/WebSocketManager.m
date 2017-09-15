@@ -45,13 +45,13 @@
 }
 
 - (void)openSocket {
-	self.socket.delegate = self;
-	[self.socket open];
+	[self connectWebSocket];
 }
 
 - (void)closeSocket {
 	self.socket.delegate = nil;
 	[self.socket close];
+	self.webSocketStatus = WebsocketStatusDisconnected;
 }
 
 - (void)setWebSocketStatus:(WebsocketStatus)webSocketStatus {
@@ -102,7 +102,7 @@
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
-	[self connectWebSocket];
+	[self closeSocket];
 }
 
 - (void)subscribeToProuduct:(Product *)product {

@@ -53,7 +53,7 @@ static void PrintReachabilityFlags(SCNetworkReachabilityFlags flags, const char*
 
 @interface Reachability()
 
-@property (nonatomic, strong) NSMutableSet *observers;
+@property (nonatomic, strong) NSMutableArray *observers;
 
 @end
 
@@ -77,7 +77,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 - (instancetype)init {
 	self = [super init];
 	if (self) {
-		self.observers = [NSMutableSet new];
+		self.observers = [NSMutableArray new];
 	}
 	return self;
 }
@@ -92,7 +92,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 
 void notifyAboutStateChange(Reachability *reachability) {
 	for (NSValue *value in reachability.observers) {
-		id <ReachabilityObserver> observer = (id <ReachabilityObserver>)[NSValue valueWithNonretainedObject:value];
+		id <ReachabilityObserver> observer = (id <ReachabilityObserver>)[value nonretainedObjectValue];
 		if ([observer respondsToSelector:@selector(networkReachabilityStatusChanged:)]) {
 			[observer networkReachabilityStatusChanged:reachability];
 		}
