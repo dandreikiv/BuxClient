@@ -11,6 +11,7 @@
 #import "Product.h"
 #import "Price.h"
 #import "DataStorageProtocol.h"
+#import "NetworkManager.h"
 #import "RequestBuilderProtocol.h"
 #import "WebSocketManager.h"
 #import "WebSocketManagerDelegate.h"
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
 @property (nonatomic, strong) id <DataStorageProtocol> dataStorage;
 @property (nonatomic, strong) WebSocketManager *webSocketManager;
+@property (nonatomic, strong) NetworkManager *networkManager;
 
 @end
 
@@ -36,6 +38,8 @@
 		
 		self.webSocketManager = [[WebSocketManager alloc] initWithRequestBuilder:self.requestBuilder];
 		self.webSocketManager.delegate = self;
+		
+		self.networkManager = [NetworkManager new];
 	}
 	return self;
 }
@@ -45,23 +49,24 @@
 }
 
 - (void)retrieveDetailsWithProduct:(Product *)product {
-	//	NSURLRequest *request = [self.requestBuilder productDetailsRequestWithProduct:product];
-	//	[self.networkManager performRequest:request completion:^(NSData *data, NSError *error) {
-	//		if (error) {
-	//			[self presentRetrieveProductsError:error];
-	//		}
-	//		else {
-	//			NSDictionary *productDictionary = [NSJSONSerialization JSONObjectWithData:data
-	//																			  options:NSJSONReadingMutableContainers
-	//																				error:NULL];
-	//			Product *details = [[Product alloc] initWithDictionary:productDictionary];
-	//			if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
-	//				dispatch_async(dispatch_get_main_queue(), ^{
-	//					[self.productDetailsOutput updateWithProduct:details];
-	//				});
-	//			}
-	//		}
-	//	}];
+	NSURLRequest *request = [self.requestBuilder productDetailsRequestWithProduct:product];
+	[self.networkManager performRequest:request completion:^(NSData *data, NSError *error) {
+		if (error) {
+//			[self presentRetrieveProductsError:error];
+		}
+		else {
+			NSDictionary *productDictionary = [NSJSONSerialization JSONObjectWithData:data
+																			  options:NSJSONReadingMutableContainers
+																				error:NULL];
+			Product *details = [[Product alloc] initWithDictionary:productDictionary];
+			[self.dataStorage replaceProduct:product withProductWithId:product.productId];
+			if ([self.productDetailsOutput respondsToSelector:@selector(updateWithProduct:)]) {
+				dispatch_async(dispatch_get_main_queue(), ^{
+					[self.productDetailsOutput updateWithProduct:details];
+				});
+			}
+		}
+	}];
 }
 
 - (void)subscribeToProduct:(Product *)product {

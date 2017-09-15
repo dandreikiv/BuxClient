@@ -270,13 +270,6 @@
 			children = (
 				85E074ED1F6B155C001AD780 /* Product List  */,
 				85E074EE1F6B1577001AD780 /* Product Details */,
-				85E074DE1F6B0275001AD780 /* ProductListController.h */,
-				85E074DF1F6B0275001AD780 /* ProductListController.m */,
-				85E07AFA1F6B16A100BBA715 /* ProductListControllerDelegate.h */,
-				85E074E71F6B1156001AD780 /* ProductListSectionHeaderView.h */,
-				85E074E81F6B1156001AD780 /* ProductListSectionHeaderView.m */,
-				85E074E11F6B084E001AD780 /* ProductListCell.h */,
-				85E074E21F6B084E001AD780 /* ProductListCell.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -286,6 +279,13 @@
 			children = (
 				85A4BFF71F66F70300065E36 /* ProductListViewController.h */,
 				85A4BFF81F66F70300065E36 /* ProductListViewController.m */,
+				85E074DE1F6B0275001AD780 /* ProductListController.h */,
+				85E074DF1F6B0275001AD780 /* ProductListController.m */,
+				85E07AFA1F6B16A100BBA715 /* ProductListControllerDelegate.h */,
+				85E074E71F6B1156001AD780 /* ProductListSectionHeaderView.h */,
+				85E074E81F6B1156001AD780 /* ProductListSectionHeaderView.m */,
+				85E074E11F6B084E001AD780 /* ProductListCell.h */,
+				85E074E21F6B084E001AD780 /* ProductListCell.m */,
 			);
 			path = "Product List ";
 			sourceTree = "<group>";

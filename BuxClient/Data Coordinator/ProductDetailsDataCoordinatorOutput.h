@@ -11,6 +11,5 @@
 @protocol ProductDetailsDataCoordinatorOutput <NSObject>
 
 - (void)updateWithProduct:(Product *)product;
-- (void)webSocketDidConnect;
 
 @end

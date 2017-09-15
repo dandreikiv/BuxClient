@@ -79,6 +79,8 @@
 	if (self.product.marketOpen == NO) {
 		[self presentMarketClosedView];
 	}
+	
+	[self.dataCoordinator subscribeToProduct:self.product];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
