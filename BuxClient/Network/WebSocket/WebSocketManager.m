@@ -168,7 +168,6 @@ const NSTimeInterval kPinningInterval = 5.0;
 	[self invalidateTimer];
 	
 	self.socket.delegate = nil;
-//	[self.socket close];
 	self.socket = nil;
 }
 

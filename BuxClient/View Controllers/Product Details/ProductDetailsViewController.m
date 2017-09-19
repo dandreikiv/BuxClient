@@ -103,10 +103,6 @@
 	self.dataCoordinator.coordinatorOutput = nil;
 }
 
-- (void)dealloc {
-	NSLog(@"dealloc: %@", NSStringFromClass([self class]));
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
