@@ -15,9 +15,12 @@
 #import "SRWebSocket.h"
 #import "Product.h"
 
+const NSTimeInterval kPinningInterval = 5.0;
+
 @interface WebSocketManager() <SRWebSocketDelegate>
 
-@property (nonatomic, strong) SRWebSocket *socket;
+@property (nonatomic, weak) SRWebSocket *socket;
+@property (nonatomic, weak) NSTimer *pinningTimer;
 @property (nonatomic, assign) WebsocketStatus webSocketStatus;
 @property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
 
@@ -35,9 +38,7 @@
 }
 
 - (void)connectWebSocket {
-	self.webSocketStatus = WebsocketStatusDisconnected;
-	self.socket.delegate = nil;
-	self.socket = nil;
+	[self closeSocket];
 	
 	SRWebSocket *webSocket = [[SRWebSocket alloc] initWithURLRequest:self.requestBuilder.webSocketRequest];
 	webSocket.delegate = self;
@@ -51,6 +52,7 @@
 - (void)closeSocket {
 	self.socket.delegate = nil;
 	[self.socket close];
+	self.socket = nil;
 	self.webSocketStatus = WebsocketStatusDisconnected;
 }
 
@@ -99,10 +101,33 @@
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
 	self.socket = webSocket;
+	[self stopPinningServer];
 }
 
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error {
 	[self closeSocket];
+	[self startPinningServer];
+}
+
+- (void)startPinningServer {
+	[self invalidateTimer];
+	__weak typeof(self) _weakSelf = self;
+	self.pinningTimer = [NSTimer scheduledTimerWithTimeInterval:kPinningInterval
+														repeats:YES
+														  block:^(NSTimer * _Nonnull timer) {
+															  [_weakSelf connectWebSocket];
+														  }];
+}
+
+- (void)stopPinningServer {
+	[self invalidateTimer];
+}
+
+- (void)invalidateTimer {
+	if ([self.pinningTimer isValid]) {
+		[self.pinningTimer invalidate];
+		self.pinningTimer = nil;
+	}
 }
 
 - (void)subscribeToProuduct:(Product *)product {
@@ -140,7 +165,11 @@
 }
 
 - (void)dealloc {
-	[self closeSocket];
+	[self invalidateTimer];
+	
+	self.socket.delegate = nil;
+//	[self.socket close];
+	self.socket = nil;
 }
 
 #pragma mark - Private -

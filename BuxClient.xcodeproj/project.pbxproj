@@ -431,6 +431,8 @@
 				TargetAttributes = {
 					85A4BFED1F66F70300065E36 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = W2DMN9Y4H8;
+						ProvisioningStyle = Automatic;
 					};
 					85A4C0061F66F70300065E36 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -699,12 +701,15 @@
 			baseConfigurationReference = 6C6F7D42161BC17FC510D42E /* Pods-BuxClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2DMN9Y4H8;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytroandreikiv.BuxClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -713,12 +718,15 @@
 			baseConfigurationReference = A363FDAD18924C1E0105BEFC /* Pods-BuxClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2DMN9Y4H8;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytroandreikiv.BuxClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
