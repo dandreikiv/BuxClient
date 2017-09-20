@@ -44,6 +44,14 @@ const CGFloat kProductListHeaderHeight = 24.0f;
 	}
 	
 	self.categories = [self.sections.allKeys sortedArrayUsingSelector:@selector(compare:options:)];
+	
+	// Sort products inside each category.
+	for (NSString *key in self.sections.allKeys) {
+		NSMutableArray *products = self.sections[key];
+		[products sortUsingComparator:^NSComparisonResult(Product *product, Product *otherProduct) {
+			return [product.displayName compare:otherProduct.displayName];
+		}];
+	}
 }
 
 #pragma mark - UITableViewDataSource -
