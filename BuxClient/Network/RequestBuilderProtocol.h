@@ -10,8 +10,28 @@
 
 @protocol RequestBuilderProtocol <NSObject>
 
-- (NSURLRequest *)productsRequest;
-- (NSURLRequest *)productDetailsRequestWithProduct:(Product *)product;
-- (NSURLRequest *)webSocketRequest;
+/**
+ Creates a request to get a list of products.
+
+ @return a NSURLRequest instance.
+ */
+- (nullable NSURLRequest *)productsRequest;
+
+
+/**
+ Creates a request to get detailed information about given product.
+
+ @param product a product for which details should be retrieved.
+ @return a NSURLRequest instance.
+ */
+- (nullable NSURLRequest *)productDetailsRequestWithProduct:(nonnull Product *)product;
+
+
+/**
+ Creates a request to connect to websocket server.
+
+ @return a NSURLRequest instance.
+ */
+- (nullable NSURLRequest *)webSocketRequest;
 
 @end
