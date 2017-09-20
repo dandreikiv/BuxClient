@@ -54,7 +54,7 @@
 	[self.dataStorage storeProducts:@[product1, product2]];
 	
 	Product *product3 = [[Product alloc] initWithDictionary:@{@"securityId": @"3"}];
-	[self.dataStorage replaceProduct:product3 withProductWithId:@"2"];
+	[self.dataStorage update:product3 withId:@"2"];
 	
 	XCTAssertNil([self.dataStorage productWithId:@"2"]);
 	XCTAssertNotNil([self.dataStorage productWithId:@"3"]);
