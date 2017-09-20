@@ -1,5 +1,5 @@
 //
-//  ProductDetailsDataCoordinator.h
+//  ProductDetailsCoordinator.h
 //  BuxClient
 //
 //  Created by dmytro.andreikiv@philips.com on 15/09/2017.
@@ -10,13 +10,13 @@
 
 @class Product;
 
-@protocol ProductDetailsDataCoordinatorOutput;
+@protocol ProductDetailsCoordinatorOutput;
 @protocol DataStorageProtocol;
 @protocol RequestBuilderProtocol;
 
-@interface ProductDetailsDataCoordinator : NSObject
+@interface ProductDetailsCoordinator : NSObject
 
-@property (nonatomic, weak, nullable) id <ProductDetailsDataCoordinatorOutput> coordinatorOutput;
+@property (nonatomic, weak, nullable) id <ProductDetailsCoordinatorOutput> coordinatorOutput;
 
 - (nullable instancetype)initWithRequestBuilder:(nonnull id <RequestBuilderProtocol>)requestBuilder
 									dataStorage:(nonnull id <DataStorageProtocol>)dataStorage;

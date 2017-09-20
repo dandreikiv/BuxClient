@@ -1,5 +1,5 @@
 //
-//  ProductListDataCoordinatorOutput.h
+//  ProductListCoordinatorOutput.h
 //  BuxClient
 //
 //  Created by dmytro.andreikiv@philips.com on 14/09/2017.
@@ -8,7 +8,7 @@
 
 @class Product;
 
-@protocol ProductListDataCoordinatorOutput <NSObject>
+@protocol ProductListCoordinatorOutput <NSObject>
 
 - (void)updateListWithProducts:(NSArray <Product *> *)products;
 

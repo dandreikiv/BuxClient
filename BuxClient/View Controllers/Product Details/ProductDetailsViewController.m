@@ -7,15 +7,15 @@
 //
 
 #import "ProductDetailsViewController.h"
-#import "ProductDetailsDataCoordinator.h"
-#import "ProductDetailsDataCoordinatorOutput.h"
+#import "ProductDetailsCoordinator.h"
+#import "ProductDetailsCoordinatorOutput.h"
 #import "ProductDetailsViewModel.h"
 #import "Product.h"
 #import "Price.h"
 #import "MarketClosedView.h"
 #import "WebSocketStatusViewModel.h"
 
-@interface ProductDetailsViewController () <ProductDetailsDataCoordinatorOutput>
+@interface ProductDetailsViewController () <ProductDetailsCoordinatorOutput>
 
 @property (nonatomic, strong) MarketClosedView *marketClosedView;
 @property (nonatomic, strong) UILabel *market;
@@ -142,7 +142,7 @@
 	self.socketStatus.textColor = viewModel.statusColor;
 }
 
-- (void)presentErorr:(NSError *)error {
+- (void)presentError:(NSError *)error {
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Bux Client", nil)
 																   message:error.localizedDescription
 															preferredStyle:UIAlertControllerStyleAlert];

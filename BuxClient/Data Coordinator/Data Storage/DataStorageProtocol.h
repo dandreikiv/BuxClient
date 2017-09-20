@@ -15,6 +15,7 @@
  */
 @property (nonatomic, assign, readonly) NSUInteger count;
 
+
 /**
  Stores given product to data storage.
 

@@ -9,10 +9,10 @@
 #import "ProductListViewController.h"
 #import "ProductDetailsViewController.h"
 #import "Product.h"
-#import "ProductListDataCoordinator.h"
+#import "ProductListCoordinator.h"
 #import "ProductListController.h"
 #import "ProductListControllerDelegate.h"
-#import "ProductDetailsDataCoordinator.h"
+#import "ProductDetailsCoordinator.h"
 #import "RequestBuilder.h"
 #import "ConnectionConfiguration.h"
 
@@ -85,7 +85,7 @@
 	controller.product = product;
 	
 	RequestBuilder *requestBuilder = [[RequestBuilder alloc] initWithConfigurataion:[ConnectionConfiguration new]];
-	ProductDetailsDataCoordinator *coordinator = [[ProductDetailsDataCoordinator alloc] initWithRequestBuilder:requestBuilder
+	ProductDetailsCoordinator *coordinator = [[ProductDetailsCoordinator alloc] initWithRequestBuilder:requestBuilder
 																				   dataStorage:self.dataCoordinator.dataStorage];
 	controller.dataCoordinator = coordinator;
 	coordinator.coordinatorOutput = controller;

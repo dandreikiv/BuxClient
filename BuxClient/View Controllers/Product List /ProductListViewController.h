@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ProductListViewController.h
 //  BuxClient
 //
 //  Created by dmytro.andreikiv@philips.com on 11/09/2017.
@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProductListDataCoordinatorOutput.h"
+#import "ProductListCoordinatorOutput.h"
 
-@class ProductListDataCoordinator;
+@class ProductListCoordinator;
 
-@interface ProductListViewController : UIViewController <ProductListDataCoordinatorOutput>
+@interface ProductListViewController : UIViewController <ProductListCoordinatorOutput>
 
-@property (nonatomic, strong) ProductListDataCoordinator *dataCoordinator;
+@property (nonatomic, strong) ProductListCoordinator *dataCoordinator;
 
 @end
 

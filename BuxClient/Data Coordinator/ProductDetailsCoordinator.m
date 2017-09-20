@@ -1,13 +1,13 @@
 //
-//  ProductDetailsDataCoordinator.m
+//  ProductDetailsCoordinator.m
 //  BuxClient
 //
 //  Created by dmytro.andreikiv@philips.com on 15/09/2017.
 //  Copyright © 2017 Dmytro Andreikiv. All rights reserved.
 //
 
-#import "ProductDetailsDataCoordinator.h"
-#import "ProductDetailsDataCoordinatorOutput.h"
+#import "ProductDetailsCoordinator.h"
+#import "ProductDetailsCoordinatorOutput.h"
 #import "Product.h"
 #import "Price.h"
 #import "DataStorageProtocol.h"
@@ -20,7 +20,7 @@
 #import "BUXError.h"
 #import "ReachabilityObserver.h"
 
-@interface ProductDetailsDataCoordinator () <WebSocketManagerDelegate, ReachabilityObserver>
+@interface ProductDetailsCoordinator () <WebSocketManagerDelegate, ReachabilityObserver>
 
 @property (nonatomic, strong) id <RequestBuilderProtocol> requestBuilder;
 @property (nonatomic, strong) id <DataStorageProtocol> dataStorage;
@@ -32,7 +32,7 @@
 @end
 
 
-@implementation ProductDetailsDataCoordinator
+@implementation ProductDetailsCoordinator
 
 - (instancetype)initWithRequestBuilder:(id <RequestBuilderProtocol>)requestBuilder
 						   dataStorage:(id <DataStorageProtocol>)dataStorage
