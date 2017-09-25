@@ -239,6 +239,17 @@
 			path = BuxClientTests;
 			sourceTree = "<group>";
 		};
+		85CCE7BC1F79395700BA1C65 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85E074E71F6B1156001AD780 /* ProductListSectionHeaderView.h */,
+				85E074E81F6B1156001AD780 /* ProductListSectionHeaderView.m */,
+				85E074E11F6B084E001AD780 /* ProductListCell.h */,
+				85E074E21F6B084E001AD780 /* ProductListCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		85CDDC3E1F66F95F00395B6D /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +297,8 @@
 		85E074DD1F6B0202001AD780 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				858A90D01F6AF817001E544B /* ProductListActions.h */,
+				85CCE7BC1F79395700BA1C65 /* Views */,
 				85E074ED1F6B155C001AD780 /* Product List  */,
 				85E074EE1F6B1577001AD780 /* Product Details */,
 			);
@@ -300,10 +313,6 @@
 				85E074DE1F6B0275001AD780 /* ProductListController.h */,
 				85E074DF1F6B0275001AD780 /* ProductListController.m */,
 				85E07AFA1F6B16A100BBA715 /* ProductListControllerDelegate.h */,
-				85E074E71F6B1156001AD780 /* ProductListSectionHeaderView.h */,
-				85E074E81F6B1156001AD780 /* ProductListSectionHeaderView.m */,
-				85E074E11F6B084E001AD780 /* ProductListCell.h */,
-				85E074E21F6B084E001AD780 /* ProductListCell.m */,
 			);
 			path = "Product List ";
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 		85E074EE1F6B1577001AD780 /* Product Details */ = {
 			isa = PBXGroup;
 			children = (
+				85F2174F1F6B4AB600CDF51C /* ProductDetailsActions.h */,
 				85E07AFE1F6B234F00BBA715 /* Views */,
 				85E074EA1F6B1548001AD780 /* ProductDetailsViewController.h */,
 				85E074EB1F6B1548001AD780 /* ProductDetailsViewController.m */,
@@ -332,10 +342,8 @@
 			children = (
 				85EA73251F6A872D00069B41 /* ProductListCoordinator.h */,
 				85EA73261F6A872D00069B41 /* ProductListCoordinator.m */,
-				858A90D01F6AF817001E544B /* ProductListActions.h */,
 				85F2174C1F6B488900CDF51C /* ProductDetailsCoordinator.h */,
 				85F2174D1F6B488900CDF51C /* ProductDetailsCoordinator.m */,
-				85F2174F1F6B4AB600CDF51C /* ProductDetailsActions.h */,
 				85F217541F6B4F2B00CDF51C /* Data Storage */,
 			);
 			path = "Data Coordinator";
