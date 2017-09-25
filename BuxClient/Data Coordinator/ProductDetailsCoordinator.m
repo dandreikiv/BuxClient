@@ -7,7 +7,7 @@
 //
 
 #import "ProductDetailsCoordinator.h"
-#import "ProductDetailsCoordinatorOutput.h"
+#import "ProductDetailsActions.h"
 #import "Product.h"
 #import "Price.h"
 #import "DataStorageProtocol.h"

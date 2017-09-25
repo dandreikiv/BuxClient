@@ -7,7 +7,7 @@
 //
 
 #import "ProductListCoordinator.h"
-#import "ProductListCoordinatorOutput.h"
+#import "ProductListActions.h"
 #import "DataStorageProtocol.h"
 #import "NetworkManager.h"
 #import "Product.h"

@@ -8,14 +8,14 @@
 
 #import "ProductDetailsViewController.h"
 #import "ProductDetailsCoordinator.h"
-#import "ProductDetailsCoordinatorOutput.h"
+#import "ProductDetailsActions.h"
 #import "ProductDetailsViewModel.h"
 #import "Product.h"
 #import "Price.h"
 #import "MarketClosedView.h"
 #import "WebSocketStatusViewModel.h"
 
-@interface ProductDetailsViewController () <ProductDetailsCoordinatorOutput>
+@interface ProductDetailsViewController () <ProductDetailsActions>
 
 @property (nonatomic, strong) MarketClosedView *marketClosedView;
 @property (nonatomic, strong) UILabel *market;

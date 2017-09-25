@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProductListCoordinatorOutput.h"
+#import "ProductListActions.h"
 
 @class ProductListCoordinator;
 
-@interface ProductListViewController : UIViewController <ProductListCoordinatorOutput>
+@interface ProductListViewController : UIViewController <ProductListActions>
 
 @property (nonatomic, strong) ProductListCoordinator *dataCoordinator;
 

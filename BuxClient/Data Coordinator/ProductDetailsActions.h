@@ -1,5 +1,5 @@
 //
-//  ProductDetailsCoordinatorOutput.h
+//  ProductDetailsActions.h
 //  BuxClient
 //
 //  Created by dmytro.andreikiv@philips.com on 15/09/2017.
@@ -11,7 +11,7 @@
 @class Product;
 @class WebSocketStatusViewModel;
 
-@protocol ProductDetailsCoordinatorOutput <NSObject>
+@protocol ProductDetailsActions <NSObject>
 
 - (void)updateWithWebSocketStatus:(WebSocketStatusViewModel *)status;
 - (void)updateWithProduct:(Product *)product;

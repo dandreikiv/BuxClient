@@ -10,14 +10,14 @@
 
 @class Product;
 
-@protocol ProductListCoordinatorOutput;
+@protocol ProductListActions;
 @protocol RequestBuilderProtocol;
 @protocol DataStorageProtocol;
 
 @interface ProductListCoordinator : NSObject
 
 @property (nonatomic, strong, readonly, nullable) id <DataStorageProtocol> dataStorage;
-@property (nonatomic, weak, nullable) id <ProductListCoordinatorOutput> coordinatorOutput;
+@property (nonatomic, weak, nullable) id <ProductListActions> coordinatorOutput;
 
 - (nullable instancetype)initWithRequestBuilder:(nonnull id <RequestBuilderProtocol>)requestBuilder
 									dataStorage:(nonnull id <DataStorageProtocol>)dataStorage;
