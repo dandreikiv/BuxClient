@@ -11,7 +11,7 @@
 @interface NetworkManager : NSObject
 
 /**
- The only purpose of the method is to perform network operation with given request.
+ The only purpose of the method is to perform network operation with a given request.
  It gets data as operation result and returns it via completion handler in raw format
  without any processing.
 
