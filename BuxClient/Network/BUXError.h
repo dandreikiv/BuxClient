@@ -8,11 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT NSString *const BUXClientDomainError;
+FOUNDATION_EXPORT NSString * _Nonnull const BUXClientDomainError;
 
 @interface BUXError : NSObject
 
-+ (NSError *)reachabilityError;
-+ (NSError *)errorWithErrorCode:(NSString *)code;
+/**
+ Creates an instance of NSError class with network specific error.
+
+ @return an error object
+ */
++ (nonnull NSError *)reachabilityError;
+
+/**
+ Creates an instance of NSError class depending on given error code.
+
+ @param code an error code.
+ @return an error object
+ */
++ (nullable NSError *)errorWithErrorCode:(nullable NSString *)code;
 
 @end
