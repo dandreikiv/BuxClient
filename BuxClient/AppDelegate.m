@@ -27,7 +27,7 @@
 	ConnectionConfiguration *configuration = [ConnectionConfiguration new];
 	RequestBuilder *requestBuilder = [[RequestBuilder alloc] initWithConfigurataion:configuration];
 	ProductListCoordinator *dataCoordinataor = [[ProductListCoordinator alloc] initWithRequestBuilder:requestBuilder
-																								  dataStorage:[InMemoryDataStorage new]];
+																						  dataStorage:[InMemoryDataStorage new]];
 	
 	ProductListViewController *productsListViewController = [ProductListViewController new];
 	productsListViewController.dataCoordinator = dataCoordinataor;

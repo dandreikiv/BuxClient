@@ -22,6 +22,8 @@
 		85A4C0011F66F70300065E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85A4BFFF1F66F70300065E36 /* LaunchScreen.storyboard */; };
 		85A4C00C1F66F70300065E36 /* ConnectionConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A4C00B1F66F70300065E36 /* ConnectionConfigurationTests.m */; };
 		85C909ED1F6A66F600A81684 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C909EC1F6A66F600A81684 /* Price.m */; };
+		85CCE7C41F7976EE00BA1C65 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CCE7C31F7976EE00BA1C65 /* Realm.framework */; };
+		85CCE7C51F7976EE00BA1C65 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85CCE7C31F7976EE00BA1C65 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC351F66F78700395B6D /* NetworkManager.m */; };
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
@@ -54,6 +56,20 @@
 			remoteInfo = BuxClient;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		85CCE7C11F79765300BA1C65 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				85CCE7C51F7976EE00BA1C65 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6C6F7D42161BC17FC510D42E /* Pods-BuxClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BuxClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BuxClient/Pods-BuxClient.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +105,7 @@
 		85A4C00D1F66F70300065E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85C909EB1F6A66F600A81684 /* Price.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		85C909EC1F6A66F600A81684 /* Price.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
+		85CCE7C31F7976EE00BA1C65 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
 		85CDDC341F66F78700395B6D /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		85CDDC351F66F78700395B6D /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		85CDDC371F66F80900395B6D /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -139,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CCE7C41F7976EE00BA1C65 /* Realm.framework in Frameworks */,
 				59DBFDCAF42EABF5E1A4383B /* libPods-BuxClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +391,7 @@
 		C8DB743EC769D45A2B05E024 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85CCE7C31F7976EE00BA1C65 /* Realm.framework */,
 				708694361C784F864C9EF120 /* libPods-BuxClient.a */,
 			);
 			name = Frameworks;
@@ -400,6 +419,7 @@
 				85A4BFEC1F66F70300065E36 /* Resources */,
 				2282F94BF0ABD39273407856 /* [CP] Embed Pods Frameworks */,
 				574B92FB44FC47A8FAC64CF6 /* [CP] Copy Pods Resources */,
+				85CCE7C11F79765300BA1C65 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -708,6 +728,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -723,6 +747,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = BuxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
