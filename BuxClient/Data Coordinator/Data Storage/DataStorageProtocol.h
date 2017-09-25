@@ -59,4 +59,11 @@
  */
 - (nullable NSArray <Product *> *)allProducts;
 
+/**
+ Removes an object with given product id from data storage;
+
+ @param productId an identifier of an object to remove.
+ */
+- (void)removeProductWithId:(nonnull NSString *)productId;
+
 @end

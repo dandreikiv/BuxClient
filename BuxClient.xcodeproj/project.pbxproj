@@ -24,6 +24,10 @@
 		85C909ED1F6A66F600A81684 /* Price.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C909EC1F6A66F600A81684 /* Price.m */; };
 		85CCE7C41F7976EE00BA1C65 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CCE7C31F7976EE00BA1C65 /* Realm.framework */; };
 		85CCE7C51F7976EE00BA1C65 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85CCE7C31F7976EE00BA1C65 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85CCE7C81F79777500BA1C65 /* DataBaseStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCE7C71F79777500BA1C65 /* DataBaseStorage.m */; };
+		85CCE7CE1F798E4500BA1C65 /* RealmProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCE7CD1F798E4500BA1C65 /* RealmProduct.m */; };
+		85CCE7D01F798E6D00BA1C65 /* DataBaseStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CCE7CF1F798E6D00BA1C65 /* DataBaseStorageTests.m */; };
+		85CCE7D11F79958D00BA1C65 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CCE7C31F7976EE00BA1C65 /* Realm.framework */; };
 		85CDDC361F66F78700395B6D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC351F66F78700395B6D /* NetworkManager.m */; };
 		85CDDC381F66F80900395B6D /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85CDDC371F66F80900395B6D /* Configuration.plist */; };
 		85CDDC3D1F66F93100395B6D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CDDC3C1F66F93100395B6D /* Product.m */; };
@@ -106,6 +110,11 @@
 		85C909EB1F6A66F600A81684 /* Price.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Price.h; sourceTree = "<group>"; };
 		85C909EC1F6A66F600A81684 /* Price.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Price.m; sourceTree = "<group>"; };
 		85CCE7C31F7976EE00BA1C65 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
+		85CCE7C61F79777500BA1C65 /* DataBaseStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataBaseStorage.h; sourceTree = "<group>"; };
+		85CCE7C71F79777500BA1C65 /* DataBaseStorage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseStorage.m; sourceTree = "<group>"; };
+		85CCE7CA1F798C8F00BA1C65 /* RealmProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmProduct.h; sourceTree = "<group>"; };
+		85CCE7CD1F798E4500BA1C65 /* RealmProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmProduct.m; sourceTree = "<group>"; };
+		85CCE7CF1F798E6D00BA1C65 /* DataBaseStorageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataBaseStorageTests.m; sourceTree = "<group>"; };
 		85CDDC341F66F78700395B6D /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		85CDDC351F66F78700395B6D /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		85CDDC371F66F80900395B6D /* Configuration.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -165,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CCE7D11F79958D00BA1C65 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +263,7 @@
 				858A90C91F6AF07D001E544B /* WebSocketMessageTests.m */,
 				85F217521F6B4DAE00CDF51C /* DataStorageTests.m */,
 				85A4C00D1F66F70300065E36 /* Info.plist */,
+				85CCE7CF1F798E6D00BA1C65 /* DataBaseStorageTests.m */,
 			);
 			path = BuxClientTests;
 			sourceTree = "<group>";
@@ -266,6 +277,17 @@
 				85E074E21F6B084E001AD780 /* ProductListCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		85CCE7C91F798C7100BA1C65 /* DataBase storage */ = {
+			isa = PBXGroup;
+			children = (
+				85CCE7C61F79777500BA1C65 /* DataBaseStorage.h */,
+				85CCE7C71F79777500BA1C65 /* DataBaseStorage.m */,
+				85CCE7CA1F798C8F00BA1C65 /* RealmProduct.h */,
+				85CCE7CD1F798E4500BA1C65 /* RealmProduct.m */,
+			);
+			path = "DataBase storage";
 			sourceTree = "<group>";
 		};
 		85CDDC3E1F66F95F00395B6D /* Models */ = {
@@ -373,6 +395,7 @@
 				8598F23A1F6B45B00010FB12 /* DataStorageProtocol.h */,
 				8598F23B1F6B47350010FB12 /* InMemoryDataStorage.h */,
 				85F217501F6B4D8000CDF51C /* InMemoryDataStorage.m */,
+				85CCE7C91F798C7100BA1C65 /* DataBase storage */,
 			);
 			path = "Data Storage";
 			sourceTree = "<group>";
@@ -561,6 +584,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85CCE7CE1F798E4500BA1C65 /* RealmProduct.m in Sources */,
 				85D6FF761F6C15D400B0923C /* BUXError.m in Sources */,
 				85E074DC1F6AFD60001AD780 /* ProductListViewModel.m in Sources */,
 				85F217571F6BDDB700CDF51C /* WebSocketStatusViewModel.m in Sources */,
@@ -569,6 +593,7 @@
 				85F217511F6B4D8000CDF51C /* InMemoryDataStorage.m in Sources */,
 				858A90C51F6AC35E001E544B /* WebSocketErrorMessage.m in Sources */,
 				85CDDC3D1F66F93100395B6D /* Product.m in Sources */,
+				85CCE7C81F79777500BA1C65 /* DataBaseStorage.m in Sources */,
 				85E074E91F6B1156001AD780 /* ProductListSectionHeaderView.m in Sources */,
 				85A4BFF91F66F70300065E36 /* ProductListViewController.m in Sources */,
 				85EA73271F6A872D00069B41 /* ProductListCoordinator.m in Sources */,
@@ -594,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A4C00C1F66F70300065E36 /* ConnectionConfigurationTests.m in Sources */,
+				85CCE7D01F798E6D00BA1C65 /* DataBaseStorageTests.m in Sources */,
 				85EA73241F6A7F8500069B41 /* RequestBuilderTests.m in Sources */,
 				858A90CA1F6AF07D001E544B /* WebSocketMessageTests.m in Sources */,
 				85F217531F6B4DAE00CDF51C /* DataStorageTests.m in Sources */,
@@ -765,6 +791,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = BuxClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytroandreikiv.BuxClientTests;
@@ -778,6 +808,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = BuxClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dmytroandreikiv.BuxClientTests;

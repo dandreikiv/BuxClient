@@ -60,5 +60,14 @@
 	XCTAssertNotNil([self.dataStorage productWithId:@"3"]);
 }
 
+- (void)testDataStorageRemovesProducts {
+	Product *product = [[Product alloc] initWithDictionary:@{@"securityId": @"1"}];
+	[self.dataStorage storeProduct:product];
+	XCTAssertTrue(self.dataStorage.count == 1);
+	
+	[self.dataStorage removeProductWithId:@"1"];
+	XCTAssertTrue(self.dataStorage.count == 0);
+}
+
 
 @end

@@ -53,4 +53,11 @@
 	return filtered.allObjects.firstObject;
 }
 
+- (void)removeProductWithId:(NSString *)productId {
+	Product *product = [self productWithId:productId];
+	if (product) {
+		[self.products removeObject:product];
+	}
+}
+
 @end
