@@ -100,7 +100,6 @@
 	[super viewWillDisappear:animated];
 	
 	[self.dataCoordinator unsubscribeFromProduct:self.product];
-	self.dataCoordinator.coordinatorOutput = nil;
 }
 
 - (void)didReceiveMemoryWarning {
