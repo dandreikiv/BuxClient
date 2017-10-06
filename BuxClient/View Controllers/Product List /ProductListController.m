@@ -34,6 +34,9 @@ const CGFloat kProductListHeaderHeight = 24.0f;
 }
 
 - (void)setProducts:(NSArray<Product *> *)products {
+	// Clean everything in order to avoid duplications.
+	[self.sections removeAllObjects];
+	
 	for (Product *product in products) {
 		NSMutableArray *array = self.sections[product.category];
 		if (array == nil) {
